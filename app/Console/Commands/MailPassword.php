@@ -39,6 +39,8 @@ class MailPassword extends Command
            agar wahan atak jaye to doosra raasta khula rehna chahiye.
            Jaanch dono par ek jaisi lagti hai. */
         if ($given = $this->argument('password')) {
+            $given = $this->tidy((string) $given);
+
             if ($bad = $this->whatIsWrong((string) $given)) {
                 $this->newLine();
                 $this->error('  ' . $bad);
@@ -56,7 +58,7 @@ class MailPassword extends Command
         $this->newLine();
 
         for ($try = 1; $try <= 3; $try++) {
-            $pw = (string) $this->secret('  Password');
+            $pw = $this->tidy((string) $this->secret('  Password'));
 
             if ($bad = $this->whatIsWrong($pw)) {
                 $this->error('  ' . $bad);
@@ -98,6 +100,22 @@ class MailPassword extends Command
         $this->call('config:clear');
 
         return self::SUCCESS;
+    }
+
+    /**
+     * Google ka app password "abcd efgh ijkl mnop" ki shakl mein dikhata
+     * hai. Wo spaces sirf padhne ke liye hain -- asli password 16 akshar
+     * ka hai. Log jaisa dikhta hai waisa hi copy karte hain, isliye us
+     * ek shakl mein spaces hata dete hain.
+     *
+     * Sirf usi shakl mein -- kisi aur password ke beech ke space ko haath
+     * nahi lagate, warna sahi password bigad jaata.
+     */
+    private function tidy(string $pw): string
+    {
+        return preg_match('~^[a-z]{4}( [a-z]{4}){3}$~', trim($pw))
+            ? str_replace(' ', '', trim($pw))
+            : $pw;
     }
 
     /**
