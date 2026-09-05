@@ -21,6 +21,9 @@ Route::post('/enquiry', [SiteController::class, 'enquiry'])
     ->middleware('throttle:10,1')          // ek IP se ghante mein das
     ->name('enquiry');
 
+Route::get('/sitemap.xml', [SiteController::class, 'sitemap'])->name('sitemap');
+Route::get('/robots.txt',  [SiteController::class, 'robots'])->name('robots');
+
 /* Wildcard sabse aakhir mein. Upar hota to /about ko bhi ek property
    ka slug samajh kar 404 de deta. */
 Route::get('/property/{slug}', [SiteController::class, 'show'])->name('property');

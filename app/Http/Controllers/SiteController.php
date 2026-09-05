@@ -114,6 +114,75 @@ class SiteController extends Controller
         return view('site.contact');
     }
 
+    /**
+     * sitemap.xml -- database se banta hai, file se nahi.
+     *
+     * Ek likhi hui file har nayi property par haath se badalni padti,
+     * aur ek din wo bhoolna hi tha. Yahan property add karte hi wo
+     * sitemap mein aa jaati hai.
+     *
+     * Sirf `visible` aati hain. Hidden property ka link Google ko dena
+     * uska waqt kharab karna hai -- wahan pahunch kar use 404 milta.
+     */
+    public function sitemap()
+    {
+        $urls = [
+            ['loc' => route('home'),       'pri' => '1.0', 'freq' => 'daily'],
+            ['loc' => route('properties'), 'pri' => '0.9', 'freq' => 'daily'],
+            ['loc' => route('about'),      'pri' => '0.6', 'freq' => 'monthly'],
+            ['loc' => route('contact'),    'pri' => '0.7', 'freq' => 'monthly'],
+        ];
+
+        /* Type wale filter page bhi bhej rahe hain -- "farmhouse in
+           Morni" jaisi search inhi par utarti hai, aur ye asli alag
+           page hain, ek jaise nahi. */
+        foreach (array_keys(Property::TYPES) as $type) {
+            if (Property::visible()->where('type', $type)->exists()) {
+                $urls[] = ['loc' => route('properties', ['type' => $type]), 'pri' => '0.7', 'freq' => 'weekly'];
+            }
+        }
+
+        foreach (Property::visible()->latest('updated_at')->get() as $p) {
+            $urls[] = [
+                'loc'  => route('property', $p->slug),
+                'pri'  => $p->is_featured ? '0.9' : '0.8',
+                'freq' => 'weekly',
+                'mod'  => optional($p->updated_at)->toAtomString(),
+            ];
+        }
+
+        $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n"
+             . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+
+        foreach ($urls as $u) {
+            $xml .= "  <url>\n"
+                 .  '    <loc>' . htmlspecialchars($u['loc'], ENT_XML1) . "</loc>\n"
+                 .  (isset($u['mod']) ? '    <lastmod>' . $u['mod'] . "</lastmod>\n" : '')
+                 .  '    <changefreq>' . $u['freq'] . "</changefreq>\n"
+                 .  '    <priority>' . $u['pri'] . "</priority>\n"
+                 .  "  </url>\n";
+        }
+
+        $xml .= '</urlset>';
+
+        return response($xml, 200)->header('Content-Type', 'application/xml; charset=UTF-8');
+    }
+
+    /**
+     * robots.txt -- yahan se isliye ki sitemap ka poora URL apne aap
+     * bane. File mein likhte to domain badalne par wo galat reh jaata.
+     */
+    public function robots()
+    {
+        $txt = "User-agent: *\n"
+             . "Allow: /\n"
+             . "Disallow: /admin\n"
+             . "Disallow: /login\n\n"
+             . 'Sitemap: ' . url('/sitemap.xml') . "\n";
+
+        return response($txt, 200)->header('Content-Type', 'text/plain; charset=UTF-8');
+    }
+
     public function enquiry(Request $request)
     {
         /* Honeypot. Bot har field bharta hai, insaan is chhupe hue box

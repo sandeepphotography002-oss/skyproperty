@@ -14,6 +14,12 @@
 <link rel="canonical" href="{{ url()->current() }}">
 <meta name="robots" content="index, follow">
 
+@if($v = config('site.google_verification'))
+  <meta name="google-site-verification" content="{{ $v }}">
+@endif
+
+<link rel="sitemap" type="application/xml" href="{{ url('/sitemap.xml') }}">
+
 <meta property="og:title" content="{{ $pageTitle }}">
 <meta property="og:description" content="{{ $pageDesc }}">
 <meta property="og:type" content="website">

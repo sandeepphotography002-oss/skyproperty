@@ -34,6 +34,12 @@ return [
 
     'hours' => 'Mon – Sun: 9:00 AM – 7:00 PM',
 
+    /* Google Search Console ka verification.
+       Google homepage par ye tag dhoondhta hai. Verify ho jaane ke baad
+       bhi ise hatana nahi -- hataane par Google site ko dobara
+       "unverified" kar deta hai aur Search Console band ho jaata hai. */
+    'google_verification' => 'lE2HtazMQVm8UcWCpR0JS6pJuFijUbrNZjE9SEApR1g',
+
     /* Jin ilaakon mein kaam hai. Homepage aur footer dono yahi padhte
        hain, taaki nayi jagah ek hi baar likhni pade. */
     'areas' => [
