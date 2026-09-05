@@ -52,6 +52,56 @@
 .band p{color:#d3e7dc;margin:0}
 .band .btn{background:#fff;color:var(--green)}
 
+/* ── guide (lamba SEO wala hissa) ── */
+.gd{max-width:880px}
+.gd h2{margin:44px 0 14px;scroll-margin-top:88px}
+.gd h2:first-child{margin-top:0}
+.gd h3{font-size:19px;margin:30px 0 10px}
+.gd p{color:#3d4a44}
+.gd-answer{background:#f2f8f4;border:1px solid #cfe4d8;border-left:4px solid var(--green);
+  border-radius:12px;padding:20px 22px;font-size:16.5px;line-height:1.8}
+.gd-list{padding-left:0;list-style:none;margin:0 0 18px}
+.gd-list li{position:relative;padding-left:26px;margin-bottom:11px;line-height:1.75}
+.gd-list li:before{content:"—";position:absolute;left:0;color:var(--green);font-weight:700}
+.gd-check{padding-left:0;list-style:none;margin:0 0 18px;
+  display:grid;grid-template-columns:1fr 1fr;gap:10px 24px}
+.gd-check li{position:relative;padding-left:28px;font-size:15px;line-height:1.6}
+.gd-check li:before{content:"☐";position:absolute;left:0;color:var(--green);font-size:17px;line-height:1.3}
+.gd-tbl{overflow-x:auto;margin:16px 0 18px;border:1px solid var(--line);border-radius:12px}
+.gd-tbl table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+.gd-tbl th,.gd-tbl td{border-bottom:1px solid var(--line);padding:12px 15px;text-align:left}
+.gd-tbl thead th{background:var(--soft);font-weight:600;font-size:13.5px;
+  text-transform:uppercase;letter-spacing:.03em;color:var(--muted)}
+.gd-tbl tbody th{background:var(--soft);font-weight:600;width:26%}
+.gd-tbl tr:last-child td,.gd-tbl tr:last-child th{border-bottom:0}
+.gd-note{background:#fffaf0;border:1px solid #f0e0bd;border-radius:11px;
+  padding:15px 18px;font-size:14.5px;color:#6b5a37}
+.gd-note a{color:#8a6520;text-decoration:underline}
+.gd-steps{display:grid;gap:12px;margin:18px 0 20px}
+.gd-step{display:flex;gap:15px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px 19px}
+.gd-step b{flex:0 0 32px;width:32px;height:32px;border-radius:50%;background:var(--green);
+  color:#fff;display:grid;place-items:center;font-size:14px}
+.gd-step strong{display:block;margin-bottom:3px}
+.gd-step p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.7}
+.gd-faq{margin:18px 0 8px}
+.gd-q{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:11px;overflow:hidden}
+.gd-q[open]{border-color:#cfe4d8;box-shadow:0 5px 20px rgba(20,40,30,.06)}
+.gd-q summary{list-style:none;cursor:pointer;display:flex;gap:12px;align-items:flex-start;
+  padding:15px 18px;font-weight:600;font-size:16px;line-height:1.5}
+.gd-q summary::-webkit-details-marker{display:none}
+.gd-q summary:hover{background:#fafcfb}
+.gd-plus{flex:0 0 22px;width:22px;height:22px;border-radius:50%;background:var(--green);
+  color:#fff;display:grid;place-items:center;font-size:15px;font-weight:700;
+  margin-top:1px;transition:transform .22s;line-height:1}
+.gd-q[open] .gd-plus{transform:rotate(45deg)}
+.gd-a{padding:0 18px 17px 52px;color:#5c6a64;font-size:15px;line-height:1.8}
+.gd-cta{background:var(--green);color:#fff;border-radius:16px;padding:30px 32px;margin:34px 0 26px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.gd-cta h3{color:#fff;margin:0 0 4px}
+.gd-cta p{color:#d3e7dc;margin:0;font-size:15px}
+.gd-cta .btn-ghost{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.34)}
+.gd-updated{font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:18px;margin:0}
+
 .areas-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:26px}
 .areas-row a{background:#fff;border:1px solid var(--line);border-radius:99px;
   padding:9px 17px;font-size:14px;color:var(--ink);font-weight:500}
@@ -63,10 +113,18 @@
   .cats{grid-template-columns:1fr 1fr}
   .why{grid-template-columns:1fr}
 }
+@media(max-width:700px){
+  .gd-check{grid-template-columns:1fr}
+}
 @media(max-width:600px){
   .finder{grid-template-columns:1fr}
   .cats{grid-template-columns:1fr}
   .band{padding:32px 24px}
+  .gd h2{font-size:22px;margin:34px 0 12px}
+  .gd-answer{padding:17px 18px;font-size:15.5px}
+  .gd-a{padding:0 16px 15px 16px}
+  .gd-q summary{font-size:15px;padding:13px 15px}
+  .gd-cta{padding:24px 20px}
 }
 @endsection
 
@@ -232,6 +290,9 @@
     </div>
   </div>
 </section>
+
+{{-- ── guide: poora likha hua hissa, FAQ ke saath ── --}}
+@include('site.partials.guide')
 
 {{-- ── areas ── --}}
 <section class="sec sec-soft">

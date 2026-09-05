@@ -32,7 +32,17 @@ class SiteController extends Controller
             'stay'  => Property::visible()->whereIn('type', ['resort', 'homestay'])->count(),
         ];
 
-        return view('site.home', compact('featured', 'counts'));
+        /* Homepage ka price table asli listings se banta hai, likha hua
+           nahi. Ek haath se likhi price guide us din purani ho jaati hai
+           jis din rate badalte hain, aur phir wo jhooth bolti rehti hai.
+           Isse jo dikhega wo hamesha wahi hoga jo sach mein bik raha hai. */
+        $priceGuide = Property::visible()
+            ->where('listing', 'sale')->where('price', '>', 0)
+            ->selectRaw('type, COUNT(*) AS n, MIN(price) AS lo, MAX(price) AS hi')
+            ->groupBy('type')->get()
+            ->sortBy(fn ($r) => array_search($r->type, array_keys(Property::TYPES)));
+
+        return view('site.home', compact('featured', 'counts', 'priceGuide'));
     }
 
     /**
