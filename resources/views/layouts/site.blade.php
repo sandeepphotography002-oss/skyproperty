@@ -339,6 +339,10 @@ img{max-width:100%;display:block}
           <li><a href="{{ route('contact') }}">Contact</a></li>
           <li><a href="{{ route('properties', ['type' => 'resort']) }}">Resorts</a></li>
           <li><a href="{{ route('properties', ['type' => 'homestay']) }}">Homestays</a></li>
+          {{-- Maalik ka doosra dhandha. Har page ke footer mein hai,
+               kyunki ghar banne ke baad log grihapravesh aur shaadi
+               karte hain -- yahi wo mauka hai jab ye link kaam aata hai. --}}
+          <li><a href="https://www.sandeepphotography.com/" target="_blank" rel="noopener">Sandeep Photography &nearr;</a></li>
         </ul>
       </div>
 

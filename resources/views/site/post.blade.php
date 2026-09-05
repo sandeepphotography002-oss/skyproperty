@@ -7,7 +7,40 @@
 .crumb{padding:16px 0;font-size:13.5px;color:var(--muted)}
 .crumb a{color:var(--muted)}
 
-.art{max-width:820px;margin:0 auto;padding:0 0 60px}
+/* Lekh ke saath ek patti -- logo, phone aur andar ke link.
+   Lambe lekh mein padhne wala aakhir tak pahunchte-pahunchte bhool
+   jaata hai ki wo kiski site par hai; ye patti saath chalti rehti hai
+   aur call ka rasta hamesha saamne rakhti hai. */
+.artwrap{display:grid;grid-template-columns:minmax(0,820px) 300px;gap:44px;
+  justify-content:center;align-items:start;padding-bottom:60px}
+.art{min-width:0;padding:0 0 20px}
+
+.aside{position:sticky;top:96px;display:grid;gap:16px}
+.abox{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px 20px;box-shadow:var(--shadow-s);text-align:center}
+.abox img.alogo{width:130px;height:auto;margin:0 auto 12px}
+.abox .aname{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:17px;margin:0 0 3px}
+.abox .aloc{color:var(--muted);font-size:13px;margin:0 0 16px}
+.abox .btn{width:100%;justify-content:center;margin-bottom:9px;padding:12px 14px;font-size:14px}
+.abox .btn:last-child{margin-bottom:0}
+
+.alist{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.alist h4{font-family:Inter,sans-serif;font-size:12px;text-transform:uppercase;
+  letter-spacing:.09em;color:var(--muted);margin:0 0 13px}
+.alist ul{list-style:none;padding:0;margin:0}
+.alist li{margin-bottom:10px;line-height:1.45}
+.alist a{font-size:14.5px;color:var(--ink)}
+.alist a:hover{color:var(--brand)}
+
+@media(max-width:1080px){
+  /* Do column ke liye jagah nahi bachi -- patti lekh ke neeche chali
+     jaati hai, aur wahan chipakti nahi. */
+  .artwrap{grid-template-columns:minmax(0,820px);gap:32px}
+  .aside{position:static;grid-template-columns:1fr 1fr;display:grid;gap:16px}
+}
+@media(max-width:640px){
+  .aside{grid-template-columns:1fr}
+}
 .art-cat{display:inline-block;background:#e9f1e4;color:var(--brand);padding:5px 13px;
   border-radius:7px;font-size:12.5px;font-weight:700;margin-bottom:14px}
 .art h1{font-size:clamp(27px,4vw,42px);margin-bottom:14px}
@@ -119,7 +152,7 @@
   <span>{{ $post->title }}</span>
 </div>
 
-<div class="wrap">
+<div class="wrap artwrap">
   <article class="art">
     <span class="art-cat">{{ $post->category_label }}</span>
 
@@ -183,6 +216,46 @@
       </div>
     </div>
   </article>
+
+  {{-- Saath chalti patti. Logo yahan isliye ki lambe lekh mein padhne
+       wala bhool jaata hai ki wo kiski site par hai. --}}
+  <aside class="aside">
+    <div class="abox">
+      <img class="alogo" src="{{ asset('brand/logo.png') }}" alt="{{ $s['name'] }}"
+           width="640" height="770">
+      <p class="aname">{{ $s['short_name'] }}</p>
+      <p class="aloc">{{ $s['address_line'] }}</p>
+
+      <a class="btn btn-primary" href="tel:{{ $s['phone_link'] }}">📞 {{ $s['phone'] }}</a>
+      <a class="btn btn-ghost" href="https://wa.me/{{ $s['whatsapp'] }}" target="_blank" rel="noopener">💬 WhatsApp</a>
+    </div>
+
+    <div class="alist">
+      <h4>Browse</h4>
+      <ul>
+        <li><a href="{{ route('properties', ['type' => 'plot']) }}">Plots in Morni Hills</a></li>
+        <li><a href="{{ route('properties', ['type' => 'land']) }}">Agricultural land</a></li>
+        <li><a href="{{ route('properties', ['type' => 'farmhouse']) }}">Farmhouses</a></li>
+        <li><a href="{{ route('properties', ['type' => 'cottage']) }}">Hill cottages</a></li>
+        <li><a href="{{ route('properties') }}">All properties</a></li>
+        <li><a href="{{ route('blog') }}">More guides</a></li>
+      </ul>
+    </div>
+
+    <div class="alist">
+      <h4>Also from us</h4>
+      <ul>
+        <li>
+          <a href="https://www.sandeepphotography.com/" target="_blank" rel="noopener">
+            Sandeep Photography &nearr;
+          </a>
+          <div style="color:var(--muted);font-size:13px;margin-top:3px;line-height:1.5">
+            Wedding and event photography across Chandigarh, Panchkula and Mohali.
+          </div>
+        </li>
+      </ul>
+    </div>
+  </aside>
 </div>
 
 @if($more->isNotEmpty())
