@@ -15,24 +15,27 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#1b2420;--muted:#6a7873;--line:#e3e8e4;--soft:#f6f8f6;--green:#2f6b4f;--green-d:#245740;--gold:#c08a2e}
+/* Rang logo se -- navy mukhya, green uchhaal ke liye. */
+:root{--ink:#16202b;--muted:#5c6a76;--line:#dfe4e9;--soft:#eef2f6;
+  --brand:#093b65;--brand-d:#062a4a;--brand-deep:#041d34;
+  --leaf:#51873f;--gold:#b8802a}
 *{box-sizing:border-box}
 body{margin:0;background:#f2f5f3;color:var(--ink);font:15px/1.6 Inter,system-ui,sans-serif}
-a{color:var(--green);text-decoration:none}
+a{color:var(--brand);text-decoration:none}
 a:hover{text-decoration:underline}
 h1,h2,h3{margin:0 0 12px;line-height:1.25}
 h1{font-size:24px}h2{font-size:19px}h3{font-size:16px}
 
 .shell{display:grid;grid-template-columns:238px 1fr;min-height:100vh}
 
-.side{background:#182420;color:#c8d3cd;padding:20px 0}
-.side-brand{padding:0 20px 18px;border-bottom:1px solid #2a3a34;margin-bottom:14px}
+.side{background:var(--brand-deep);color:#c4d1de;padding:20px 0}
+.side-brand{padding:0 20px 18px;border-bottom:1px solid rgba(255,255,255,.14);margin-bottom:14px}
 .side-brand b{display:block;color:#fff;font-size:16px}
-.side-brand span{font-size:11.5px;color:#8fa199;letter-spacing:.05em;text-transform:uppercase}
-.side a.item{display:flex;align-items:center;gap:11px;padding:11px 20px;color:#c8d3cd;font-size:14.5px}
-.side a.item:hover{background:#22322c;color:#fff;text-decoration:none}
-.side a.item.on{background:var(--green);color:#fff;font-weight:600}
-.side .grp{padding:16px 20px 6px;font-size:11px;color:#7b8d85;text-transform:uppercase;letter-spacing:.08em}
+.side-brand span{font-size:11.5px;color:#8fa4b8;letter-spacing:.05em;text-transform:uppercase}
+.side a.item{display:flex;align-items:center;gap:11px;padding:11px 20px;color:#c4d1de;font-size:14.5px}
+.side a.item:hover{background:rgba(255,255,255,.09);color:#fff;text-decoration:none}
+.side a.item.on{background:var(--brand);color:#fff;font-weight:600}
+.side .grp{padding:16px 20px 6px;font-size:11px;color:#7c90a4;text-transform:uppercase;letter-spacing:.08em}
 .badge{margin-left:auto;background:#d64545;color:#fff;border-radius:99px;
   padding:1px 8px;font-size:11.5px;font-weight:700;min-width:20px;text-align:center}
 @keyframes blip{0%,100%{opacity:1}50%{opacity:.45}}
@@ -45,8 +48,8 @@ h1{font-size:24px}h2{font-size:19px}h3{font-size:16px}
 .btn{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;padding:10px 17px;
   border-radius:9px;font-weight:600;font-size:14px;font-family:inherit;transition:background .15s}
 .btn:hover{text-decoration:none}
-.btn-primary{background:var(--green);color:#fff}
-.btn-primary:hover{background:var(--green-d)}
+.btn-primary{background:var(--brand);color:#fff}
+.btn-primary:hover{background:var(--brand-d)}
 .btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
 .btn-danger{background:#d64545;color:#fff}
 .btn-sm{padding:6px 12px;font-size:13px}

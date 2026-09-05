@@ -10,12 +10,14 @@
 return [
     'name'       => 'Sky Property Morni Hills',
     'short_name' => 'Sky Property',
-    'tagline'    => 'Plots, farmhouses and cottages in Morni Hills',
+    'tagline'    => 'Your Dream Property, Our Commitment',
+    'tagline_2'  => 'Live close to nature, away from noise',
+    'tagline_3'  => 'Invest Today, Enjoy Tomorrow',
 
     'phone'         => '+91 83073 77270',
     'phone_link'    => '+918307377270',   // tel: aur WhatsApp ke liye
     'whatsapp'      => '918307377270',
-    'email'         => 'skypropertymorni@gmail.com',
+    'email'         => 'balvindersingh134205@gmail.com',
 
     'address' => [
         'street'   => 'Morni',

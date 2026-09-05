@@ -8,7 +8,7 @@
 .crumb a{color:var(--muted)}
 
 .art{max-width:820px;margin:0 auto;padding:0 0 60px}
-.art-cat{display:inline-block;background:#eaf3ee;color:var(--green);padding:5px 13px;
+.art-cat{display:inline-block;background:#e7eef6;color:var(--brand);padding:5px 13px;
   border-radius:7px;font-size:12.5px;font-weight:700;margin-bottom:14px}
 .art h1{font-size:clamp(27px,4vw,42px);margin-bottom:14px}
 .art-meta{display:flex;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:14px;
@@ -26,7 +26,7 @@
 .art-body table{width:100%;border-collapse:collapse;margin:18px 0;font-size:15px}
 .art-body th,.art-body td{border:1px solid var(--line);padding:11px 14px;text-align:left}
 .art-body th{background:var(--soft);font-weight:600}
-.art-body blockquote{border-left:4px solid var(--green);background:var(--soft);
+.art-body blockquote{border-left:4px solid var(--brand);background:var(--soft);
   margin:20px 0;padding:16px 20px;border-radius:0 10px 10px 0}
 .art-body blockquote p:last-child{margin:0}
 .art-body img{border-radius:12px;margin:18px 0}
@@ -35,12 +35,12 @@
 .faqbox{margin:38px 0 8px}
 .faqbox h2{font-size:24px;margin-bottom:16px}
 .fq{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:11px;overflow:hidden}
-.fq[open]{border-color:#cfe4d8;box-shadow:0 5px 20px rgba(20,40,30,.06)}
+.fq[open]{border-color:#c9d9ea;box-shadow:0 5px 20px rgba(9,35,60,.07)}
 .fq summary{list-style:none;cursor:pointer;display:flex;gap:12px;align-items:flex-start;
   padding:15px 18px;font-weight:600;font-size:16px;line-height:1.5}
 .fq summary::-webkit-details-marker{display:none}
 .fq summary:hover{background:#fafcfb}
-.fq-plus{flex:0 0 22px;width:22px;height:22px;border-radius:50%;background:var(--green);
+.fq-plus{flex:0 0 22px;width:22px;height:22px;border-radius:50%;background:var(--brand);
   color:#fff;display:grid;place-items:center;font-size:15px;font-weight:700;
   margin-top:1px;transition:transform .22s;line-height:1}
 .fq[open] .fq-plus{transform:rotate(45deg)}
@@ -49,16 +49,16 @@
 .author{display:flex;gap:16px;background:var(--soft);border-radius:var(--radius);
   padding:22px 24px;margin:34px 0 0}
 .author-ic{width:52px;height:52px;flex:0 0 52px;border-radius:50%;
-  background:linear-gradient(135deg,var(--green),#4b9a72);color:#fff;
+  background:linear-gradient(140deg,var(--brand),#1a5f96);color:#fff;
   display:grid;place-items:center;font-size:23px}
 .author h3{font-size:16px;margin:0 0 4px;font-family:Inter,sans-serif}
 .author p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.7}
 
-.art-cta{background:var(--green);color:#fff;border-radius:16px;padding:30px 32px;margin:32px 0 0;
+.art-cta{background:var(--brand);color:#fff;border-radius:16px;padding:30px 32px;margin:32px 0 0;
   display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .art-cta h3{color:#fff;margin:0 0 4px}
 .art-cta p{color:#d3e7dc;margin:0;font-size:15px}
-.art-cta .btn{background:#fff;color:var(--green)}
+.art-cta .btn{background:#fff;color:var(--brand)}
 .art-cta .btn-ghost{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.34)}
 
 @media(max-width:640px){
@@ -162,7 +162,7 @@
     @endif
 
     <div class="author">
-      <div class="author-ic">⛰</div>
+      <img class="author-ic" src="{{ asset('brand/mark.png') }}" alt="" style="object-fit:contain;background:#fff;padding:7px">
       <div>
         <h3>{{ $author }}</h3>
         <p>

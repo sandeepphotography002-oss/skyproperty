@@ -25,8 +25,8 @@
 .pager nav{display:flex;gap:6px;flex-wrap:wrap}
 .pager a,.pager span{display:inline-block;padding:9px 14px;border:1px solid var(--line);
   border-radius:8px;background:#fff;font-size:14.5px;color:var(--ink)}
-.pager a:hover{border-color:var(--green);text-decoration:none}
-.pager [aria-current]{background:var(--green);color:#fff;border-color:var(--green)}
+.pager a:hover{border-color:var(--brand);text-decoration:none}
+.pager [aria-current]{background:var(--brand);color:#fff;border-color:var(--brand)}
 .pager .hidden,.pager [aria-disabled="true"]{opacity:.42}
 .pager svg{width:16px;height:16px}
 

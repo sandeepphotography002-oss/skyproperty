@@ -13,7 +13,7 @@
 .steps{counter-reset:s;display:grid;gap:16px}
 .step{display:flex;gap:17px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 22px}
 .step:before{counter-increment:s;content:counter(s);flex:0 0 36px;width:36px;height:36px;border-radius:50%;
-  background:var(--green);color:#fff;display:grid;place-items:center;font-weight:700;font-size:15px}
+  background:var(--brand);color:#fff;display:grid;place-items:center;font-weight:700;font-size:15px}
 .step h3{font-size:17px;margin:0 0 5px}
 .step p{margin:0;color:var(--muted);font-size:14.5px}
 

@@ -7,8 +7,8 @@
 .bcats{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin-top:22px}
 .bcats a{background:#fff;border:1px solid var(--line);border-radius:99px;
   padding:8px 17px;font-size:14px;color:var(--ink);font-weight:500}
-.bcats a:hover{border-color:var(--green);color:var(--green);text-decoration:none}
-.bcats a.on{background:var(--green);border-color:var(--green);color:#fff}
+.bcats a:hover{border-color:var(--brand);color:var(--brand);text-decoration:none}
+.bcats a.on{background:var(--brand);border-color:var(--brand);color:#fff}
 
 .bsearch{max-width:460px;margin:20px auto 0;display:flex;gap:9px}
 .bsearch input{flex:1;padding:11px 14px;border:1px solid var(--line);border-radius:9px;

@@ -7,8 +7,8 @@
 .hero{position:relative;min-height:min(92vh,780px);display:flex;align-items:center;
   color:#fff;padding:96px 0 84px;overflow:hidden;
   background:
-    linear-gradient(100deg, rgba(12,24,17,.90) 0%, rgba(12,24,17,.70) 42%, rgba(12,24,17,.44) 100%),
-    linear-gradient(to top, rgba(12,24,17,.72) 0%, rgba(12,24,17,0) 46%),
+    linear-gradient(100deg, rgba(4,26,48,.90) 0%, rgba(4,26,48,.70) 42%, rgba(4,26,48,.44) 100%),
+    linear-gradient(to top, rgba(4,26,48,.74) 0%, rgba(4,26,48,0) 46%),
     url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1900&q=72') center/cover no-repeat;
   background-attachment:scroll, scroll, fixed}
 /* Phone par fixed background lag karta hai aur kai jagah chalta hi
@@ -21,6 +21,8 @@
   background:rgba(255,255,255,.10);backdrop-filter:blur(8px);
   border:1px solid rgba(255,255,255,.26);padding:8px 17px;border-radius:99px;font-size:13px;
   font-weight:600;letter-spacing:.07em;text-transform:uppercase;margin-bottom:22px}
+.hero-tag{font-family:Fraunces,Georgia,serif;font-size:clamp(19px,2.3vw,25px);
+  color:var(--gold-l);margin:-4px 0 16px;letter-spacing:-.01em;font-weight:600}
 .hero-btns{display:flex;gap:13px;flex-wrap:wrap}
 .hero .btn-ghost{background:rgba(255,255,255,.10);color:#fff;border-color:rgba(255,255,255,.32);
   backdrop-filter:blur(8px);box-shadow:none}
@@ -34,8 +36,8 @@
 .finder input,.finder select{width:100%;padding:12px 13px;border:1px solid var(--line);
   border-radius:10px;font-size:15px;font-family:inherit;color:var(--ink);background:var(--bg);
   transition:border-color .18s, box-shadow .18s}
-.finder input:focus,.finder select:focus{outline:0;border-color:var(--green);
-  box-shadow:0 0 0 3px rgba(43,99,71,.14);background:#fff}
+.finder input:focus,.finder select:focus{outline:0;border-color:var(--brand);
+  box-shadow:0 0 0 3px rgba(9,59,101,.14);background:#fff}
 
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:46px}
 .stat{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);
@@ -55,7 +57,7 @@
 .cat:hover img{transform:scale(1.08)}
 .cat span{position:absolute;inset:auto 0 0 0;padding:52px 20px 18px;color:#fff;font-weight:700;
   font-size:17.5px;letter-spacing:-.01em;
-  background:linear-gradient(transparent,rgba(10,20,14,.88));
+  background:linear-gradient(transparent,rgba(4,22,40,.88));
   display:flex;align-items:center;justify-content:space-between;gap:10px}
 .cat span:after{content:"→";font-size:19px;opacity:0;transform:translateX(-6px);
   transition:opacity .25s, transform .25s}
@@ -68,15 +70,15 @@
   transition:transform .24s cubic-bezier(.22,.61,.36,1), box-shadow .24s, border-color .24s}
 .why-item:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#d8cbb4}
 .why-ico{width:50px;height:50px;border-radius:13px;
-  background:linear-gradient(140deg,#eaf3ee,#dcebe2);color:var(--green);
+  background:linear-gradient(140deg,#e7eef6,#d7e4f0);color:var(--brand);
   display:grid;place-items:center;font-size:23px;margin-bottom:16px;
-  box-shadow:inset 0 0 0 1px rgba(43,99,71,.08)}
+  box-shadow:inset 0 0 0 1px rgba(9,59,101,.08)}
 .why-item h3{font-size:18.5px;margin-bottom:8px}
 .why-item p{color:var(--muted);font-size:14.5px;margin:0;line-height:1.75}
 
 /* cta band */
-.band{background:linear-gradient(135deg,var(--green),var(--green-d));color:#fff;
-  border-radius:20px;padding:48px 44px;box-shadow:0 18px 50px rgba(43,99,71,.28);
+.band{background:linear-gradient(135deg,var(--brand),var(--brand-d));color:#fff;
+  border-radius:20px;padding:48px 44px;box-shadow:0 18px 50px rgba(9,59,101,.28);
   display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;
   position:relative;overflow:hidden}
 /* Kone mein halka sa ujaala -- flat hare dabbe se behtar lagta hai. */
@@ -85,7 +87,7 @@
   pointer-events:none}
 .band h2{color:#fff;margin-bottom:6px}
 .band p{color:#d3e7dc;margin:0}
-.band .btn{background:#fff;color:var(--green)}
+.band .btn{background:#fff;color:var(--brand)}
 
 /* ── guide (lamba SEO wala hissa) ── */
 .gd{max-width:880px}
@@ -93,15 +95,15 @@
 .gd h2:first-child{margin-top:0}
 .gd h3{font-size:19px;margin:30px 0 10px}
 .gd p{color:#3d4a44}
-.gd-answer{background:#f2f8f4;border:1px solid #cfe4d8;border-left:4px solid var(--green);
+.gd-answer{background:#f2f8f4;border:1px solid #cfe4d8;border-left:4px solid var(--brand);
   border-radius:12px;padding:20px 22px;font-size:16.5px;line-height:1.8}
 .gd-list{padding-left:0;list-style:none;margin:0 0 18px}
 .gd-list li{position:relative;padding-left:26px;margin-bottom:11px;line-height:1.75}
-.gd-list li:before{content:"—";position:absolute;left:0;color:var(--green);font-weight:700}
+.gd-list li:before{content:"—";position:absolute;left:0;color:var(--brand);font-weight:700}
 .gd-check{padding-left:0;list-style:none;margin:0 0 18px;
   display:grid;grid-template-columns:1fr 1fr;gap:10px 24px}
 .gd-check li{position:relative;padding-left:28px;font-size:15px;line-height:1.6}
-.gd-check li:before{content:"☐";position:absolute;left:0;color:var(--green);font-size:17px;line-height:1.3}
+.gd-check li:before{content:"☐";position:absolute;left:0;color:var(--brand);font-size:17px;line-height:1.3}
 .gd-tbl{overflow-x:auto;margin:16px 0 18px;border:1px solid var(--line);border-radius:12px}
 .gd-tbl table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
 .gd-tbl th,.gd-tbl td{border-bottom:1px solid var(--line);padding:12px 15px;text-align:left}
@@ -114,7 +116,7 @@
 .gd-note a{color:#8a6520;text-decoration:underline}
 .gd-steps{display:grid;gap:12px;margin:18px 0 20px}
 .gd-step{display:flex;gap:15px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px 19px}
-.gd-step b{flex:0 0 32px;width:32px;height:32px;border-radius:50%;background:var(--green);
+.gd-step b{flex:0 0 32px;width:32px;height:32px;border-radius:50%;background:var(--brand);
   color:#fff;display:grid;place-items:center;font-size:14px}
 .gd-step strong{display:block;margin-bottom:3px}
 .gd-step p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.7}
@@ -125,12 +127,12 @@
   padding:15px 18px;font-weight:600;font-size:16px;line-height:1.5}
 .gd-q summary::-webkit-details-marker{display:none}
 .gd-q summary:hover{background:#fafcfb}
-.gd-plus{flex:0 0 22px;width:22px;height:22px;border-radius:50%;background:var(--green);
+.gd-plus{flex:0 0 22px;width:22px;height:22px;border-radius:50%;background:var(--brand);
   color:#fff;display:grid;place-items:center;font-size:15px;font-weight:700;
   margin-top:1px;transition:transform .22s;line-height:1}
 .gd-q[open] .gd-plus{transform:rotate(45deg)}
 .gd-a{padding:0 18px 17px 52px;color:#5c6a64;font-size:15px;line-height:1.8}
-.gd-cta{background:var(--green);color:#fff;border-radius:16px;padding:30px 32px;margin:34px 0 26px;
+.gd-cta{background:var(--brand);color:#fff;border-radius:16px;padding:30px 32px;margin:34px 0 26px;
   display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .gd-cta h3{color:#fff;margin:0 0 4px}
 .gd-cta p{color:#d3e7dc;margin:0;font-size:15px}
@@ -141,7 +143,7 @@
 .areas-row a{background:var(--card);border:1px solid var(--line);border-radius:99px;
   padding:10px 19px;font-size:14px;color:var(--ink);font-weight:500;box-shadow:var(--shadow-s);
   transition:border-color .18s, color .18s, transform .18s}
-.areas-row a:hover{border-color:var(--green);color:var(--green);text-decoration:none;transform:translateY(-2px)}
+.areas-row a:hover{border-color:var(--brand);color:var(--brand);text-decoration:none;transform:translateY(-2px)}
 
 @media(max-width:900px){
   .finder{grid-template-columns:1fr 1fr;gap:11px}
@@ -172,6 +174,8 @@
     <span class="hero-eyebrow">⛰ Morni Hills · Panchkula · Haryana</span>
 
     <h1>Own a piece of the Morni hills</h1>
+
+    <p class="hero-tag">{{ $s['tagline'] }}.</p>
 
     <p>
       Plots, farmhouses, cottages and farm land in Morni and around Panchkula.

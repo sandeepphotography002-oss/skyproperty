@@ -20,6 +20,13 @@
 
 <link rel="sitemap" type="application/xml" href="{{ url('/sitemap.xml') }}">
 
+{{-- Favicon ke liye sirf pahaad wala nishaan. Poora logo 16px par
+     kaali lakeeron ka gucchha ban jaata hai -- naam padha hi nahi
+     jaata, aur tab ki pehchaan chali jaati hai. --}}
+<link rel="icon" type="image/png" href="{{ asset('brand/mark.png') }}">
+<link rel="apple-touch-icon" href="{{ asset('brand/logo.png') }}">
+<meta property="og:image" content="{{ asset('brand/logo.png') }}">
+
 <meta property="og:title" content="{{ $pageTitle }}">
 <meta property="og:description" content="{{ $pageDesc }}">
 <meta property="og:type" content="website">
@@ -41,7 +48,7 @@
     'url'      => url('/'),
     'telephone'=> $s['phone'],
     'email'    => $s['email'],
-    'image'    => url('/') . '/og-cover.jpg',
+    'image'    => asset('brand/logo.png'),
     'address'  => [
         '@type'           => 'PostalAddress',
         'streetAddress'   => $s['address']['street'],
@@ -62,10 +69,18 @@
    dono chipke hue lagte hain; cream par unke kinaare dikhte hain aur
    poora page mehnga lagta hai. Ye ek badlaav sabse zyada farak dalta
    hai, aur baaki sab uske aas-paas tay hua hai. */
+/* Rang logo se aaye hain, meri pasand se nahi. Navy #093b65 aur green
+   #51873f seedha logo ki file se naape gaye hain, taaki site aur logo
+   ek hi cheez lagein -- do alag hare rang aamne-saamne hamesha bure
+   lagte hain. Navy mukhya hai (logo mein wahi bhaari hai), green
+   uchhaal ke liye. */
 :root{
-  --ink:#1a221d; --muted:#5f6d66; --line:#e6ded0;
-  --bg:#fbf8f2; --soft:#f4efe4; --card:#ffffff;
-  --green:#2b6347; --green-d:#1e4b35; --green-deep:#14261c;
+  --ink:#16202b; --muted:#5c6a76; --line:#dfe4e9;
+  --bg:#f9fafb; --soft:#eef2f6; --card:#ffffff;
+  /* --brand hi mukhya rang hai. Naam "navy" nahi rakha kyunki agar
+     kabhi brand ka rang badla, to naam jhooth bolne lagta. */
+  --brand:#093b65; --brand-d:#062a4a; --brand-deep:#041d34;
+  --leaf:#51873f; --leaf-d:#3f6d31;
   --gold:#b8802a; --gold-l:#d9a24a;
   --shadow-s:0 2px 10px rgba(30,45,35,.06);
   --shadow:0 10px 34px rgba(30,45,35,.10);
@@ -81,7 +96,7 @@ h1{font-size:clamp(32px,5vw,56px);letter-spacing:-.028em}
 h2{font-size:clamp(25px,3.4vw,38px)}
 h3{font-size:20px;letter-spacing:-.01em}
 p{margin:0 0 15px}
-a{color:var(--green);text-decoration:none}
+a{color:var(--brand);text-decoration:none}
 a:hover{text-decoration:underline}
 img{max-width:100%;display:block}
 .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
@@ -114,13 +129,13 @@ img{max-width:100%;display:block}
   transition:transform .18s cubic-bezier(.22,.61,.36,1), box-shadow .18s, background .18s}
 .btn:hover{text-decoration:none;transform:translateY(-2px)}
 .btn:active{transform:translateY(0)}
-.btn-primary{background:var(--green);color:#fff;box-shadow:0 6px 18px rgba(43,99,71,.26)}
-.btn-primary:hover{background:var(--green-d);box-shadow:0 10px 26px rgba(43,99,71,.32)}
+.btn-primary{background:var(--brand);color:#fff;box-shadow:0 6px 18px rgba(43,99,71,.26)}
+.btn-primary:hover{background:var(--brand-d);box-shadow:0 10px 26px rgba(43,99,71,.32)}
 .btn-gold{background:linear-gradient(135deg,var(--gold-l),var(--gold));color:#fff;
   box-shadow:0 6px 18px rgba(184,128,42,.30)}
 .btn-gold:hover{box-shadow:0 10px 26px rgba(184,128,42,.38)}
 .btn-ghost{background:var(--card);color:var(--ink);border:1px solid var(--line);box-shadow:var(--shadow-s)}
-.btn-ghost:hover{border-color:var(--green);color:var(--green)}
+.btn-ghost:hover{border-color:var(--brand);color:var(--brand)}
 .btn-block{width:100%;justify-content:center}
 
 /* ── header ── */
@@ -134,17 +149,14 @@ img{max-width:100%;display:block}
 .hdr-in{display:flex;align-items:center;gap:22px;height:74px}
 .brand{display:flex;align-items:center;gap:11px;font-family:Fraunces,serif;font-weight:700;font-size:20px;color:var(--ink)}
 .brand:hover{text-decoration:none}
-.brand-mark{width:38px;height:38px;border-radius:11px;
-  background:linear-gradient(140deg,var(--green),#4b9a72);
-  color:#fff;display:grid;place-items:center;font-size:18px;flex:0 0 38px;
-  box-shadow:0 4px 12px rgba(43,99,71,.28)}
+.brand-mark{width:auto;height:42px;flex:0 0 auto;display:block}
 .brand small{display:block;font-family:Inter,sans-serif;font-size:11px;font-weight:500;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
 .nav{margin-left:auto;display:flex;align-items:center;gap:26px}
 .nav a{color:var(--ink);font-size:15px;font-weight:500}
-.nav a.on{color:var(--green);font-weight:600}
-.hdr-call{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;
+.nav a.on{color:var(--brand);font-weight:600}
+.hdr-call{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#fff;
   padding:10px 18px;border-radius:9px;font-weight:600;font-size:14.5px}
-.hdr-call:hover{background:var(--green-d);text-decoration:none}
+.hdr-call:hover{background:var(--brand-d);text-decoration:none}
 .burger{display:none;margin-left:auto;background:none;border:0;font-size:26px;cursor:pointer;color:var(--ink);line-height:1;padding:4px 8px}
 
 /* ── cards ── */
@@ -169,18 +181,18 @@ img{max-width:100%;display:block}
   font-size:12px;font-weight:700;color:#fff;letter-spacing:.03em}
 .st-sold{background:#a83a3a}.st-rented{background:#8a6d1f}
 .card-body{padding:18px 19px 20px;display:flex;flex-direction:column;flex:1}
-.card-price{font-family:Fraunces,serif;font-size:23px;font-weight:700;color:var(--green);
+.card-price{font-family:Fraunces,serif;font-size:23px;font-weight:700;color:var(--brand);
   margin-bottom:6px;letter-spacing:-.02em}
 .card-title{font-size:16.5px;font-weight:600;margin:0 0 7px;line-height:1.4}
 .card-title a{color:var(--ink)}
-.card-title a:hover{color:var(--green);text-decoration:none}
+.card-title a:hover{color:var(--brand);text-decoration:none}
 .card-loc{color:var(--muted);font-size:13.5px;margin:0 0 13px}
 .card-meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-top:14px;border-top:1px solid var(--line)}
 .chip{background:var(--soft);border:1px solid #ece4d5;border-radius:8px;padding:5px 11px;
   font-size:12.5px;color:#6a7269;font-weight:500}
 
 /* ── footer ── */
-.ftr{background:var(--green-deep);color:#c3cfc7;padding:62px 0 26px;margin-top:76px;
+.ftr{background:var(--brand-deep);color:#c3cfc7;padding:62px 0 26px;margin-top:76px;
   border-top:3px solid var(--gold)}
 .ftr h4{color:#fff;font-family:Inter,sans-serif;font-size:13px;text-transform:uppercase;
   letter-spacing:.10em;margin-bottom:16px}
@@ -233,7 +245,8 @@ img{max-width:100%;display:block}
 <header class="hdr">
   <div class="wrap hdr-in">
     <a class="brand" href="{{ route('home') }}">
-      <span class="brand-mark">⛰</span>
+      <img class="brand-mark" src="{{ asset("brand/mark.png") }}"
+           alt="Sky Property Morni Hills" width="320" height="177">
       <span>Sky Property<small>Morni Hills</small></span>
     </a>
 
@@ -256,6 +269,8 @@ img{max-width:100%;display:block}
   <div class="wrap">
     <div class="ftr-grid">
       <div>
+        <img src="{{ asset('brand/logo.png') }}" alt="{{ $s['name'] }}"
+             style="width:132px;height:auto;margin-bottom:16px;filter:brightness(0) invert(1);opacity:.94">
         <h4>{{ $s['name'] }}</h4>
         <p style="font-size:14.5px;line-height:1.75">
           Plots, farmhouses, cottages and land in Morni Hills and around Panchkula.

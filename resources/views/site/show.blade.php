@@ -14,15 +14,15 @@
 .thumbs{display:flex;gap:9px;flex-wrap:wrap;margin-top:11px}
 .thumbs img{width:88px;height:66px;object-fit:cover;border-radius:8px;cursor:pointer;
   border:2px solid transparent;transition:border-color .18s}
-.thumbs img:hover,.thumbs img.on{border-color:var(--green)}
+.thumbs img:hover,.thumbs img.on{border-color:var(--brand)}
 
 .detail{display:grid;grid-template-columns:1fr 366px;gap:36px;align-items:start;padding:30px 0 66px}
 
 .p-head{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:22px}
 .p-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
-.badge{background:#eaf3ee;color:var(--green);padding:5px 12px;border-radius:7px;font-size:12.5px;font-weight:700;letter-spacing:.02em}
+.badge{background:#e7eef6;color:var(--brand);padding:5px 12px;border-radius:7px;font-size:12.5px;font-weight:700;letter-spacing:.02em}
 .badge-warn{background:#fdeceb;color:#a63a33}
-.p-price{font-family:Fraunces,serif;font-size:33px;font-weight:700;color:var(--green);margin:10px 0 4px}
+.p-price{font-family:Fraunces,serif;font-size:33px;font-weight:700;color:var(--brand);margin:10px 0 4px}
 .p-loc{color:var(--muted);font-size:15px;margin:0}
 
 .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0 28px}
@@ -34,7 +34,7 @@
 .p-body h2{font-size:22px;margin:30px 0 12px}
 .feat{display:grid;grid-template-columns:1fr 1fr;gap:9px;list-style:none;padding:0;margin:0 0 8px}
 .feat li{padding-left:26px;position:relative;font-size:15px}
-.feat li:before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700}
+.feat li:before{content:"✓";position:absolute;left:0;color:var(--brand);font-weight:700}
 
 .spec{width:100%;border-collapse:collapse;font-size:15px;margin:6px 0 8px}
 .spec th,.spec td{border:1px solid var(--line);padding:11px 14px;text-align:left}

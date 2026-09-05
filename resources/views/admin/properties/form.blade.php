@@ -231,7 +231,7 @@ Electricity pole at site">{{ old('features_text', implode("\n", (array) $propert
     @else
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px">
         @foreach($property->images as $img)
-          <div style="border:2px solid {{ $property->cover_image === $img ? 'var(--green)' : 'var(--line)' }};
+          <div style="border:2px solid {{ $property->cover_image === $img ? 'var(--brand)' : 'var(--line)' }};
                       border-radius:11px;overflow:hidden;background:#fff">
             <img src="{{ $img }}" alt="" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block">
             <div style="padding:9px;display:flex;gap:6px;justify-content:space-between;align-items:center">

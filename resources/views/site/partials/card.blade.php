@@ -10,7 +10,7 @@
     @elseif($p->status === 'rented')
       <span class="card-status st-rented">RENTED</span>
     @elseif($p->listing === 'rent')
-      <span class="card-status" style="background:var(--green)">FOR RENT</span>
+      <span class="card-status" style="background:var(--brand)">FOR RENT</span>
     @endif
   </a>
 
