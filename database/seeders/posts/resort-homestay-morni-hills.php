@@ -9,6 +9,7 @@
 
 return [
     'title'    => 'Buying a Resort or Homestay in Morni Hills: The Business Behind the View',
+    'slug'        => 'resort-for-sale-morni',
     'category' => 'investment',
     'cover_image' => 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=1400&q=72',
     'cover_alt'   => 'Resort building on a hillside in Morni with the valley behind',

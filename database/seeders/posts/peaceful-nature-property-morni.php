@@ -6,6 +6,7 @@
 
 return [
     'title'       => 'Peaceful Property in Morni Hills: What Quiet Actually Involves',
+    'slug'        => 'peaceful-property-morni',
     'category'    => 'area',
     'cover_image' => 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1400&q=72',
     'cover_alt'   => 'Quiet forest road in Morni Hills',

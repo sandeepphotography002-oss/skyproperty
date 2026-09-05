@@ -6,6 +6,7 @@
 
 return [
     'title'       => 'Sky Property in Panchkula: Land Below the Hills',
+    'slug'        => 'sky-property-panchkula',
     'category'    => 'area',
     'cover_image' => 'https://images.unsplash.com/photo-1444858291040-58f756a3bdd6?w=1400&q=72',
     'cover_alt'   => 'Terraced land near Panchkula',
@@ -62,7 +63,7 @@ return [
 <p>Call <strong>+91 83073 77270</strong> and tell us the number. We will tell you which side of the hill your answer points to.</p>
 HTML,
 
-    'meta_title'       => 'Sky Property Panchkula — Land Below the Hills | Sky Property Morni',
+    'meta_title'       => 'Sky Property Panchkula — Land Below the Hills',
     'meta_description' => 'Property in Panchkula district compared with Morni Hills: drive, roads, land per rupee, resale and building cost. Who should buy below and who should buy up.',
     'keywords'         => 'sky property panchkula, property in panchkula, land near panchkula, plots pinjore kalka, property below morni hills',
 ];

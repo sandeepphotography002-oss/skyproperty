@@ -15,6 +15,7 @@
 
 return [
     'title'    => 'Is Property in Morni Hills a Good Investment? An Honest Look',
+    'slug'        => 'is-morni-a-good-investment',
     'category' => 'investment',
     'cover_image' => 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1400&q=72',
     'cover_alt'   => 'Morni Hills landscape near Panchkula, an area buyers consider for land investment',

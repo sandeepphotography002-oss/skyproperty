@@ -6,6 +6,7 @@
 
 return [
     'title'       => 'Agricultural Land in Morni Hills: The Rules, Plainly Stated',
+    'slug'        => 'agricultural-land-morni',
     'category'    => 'legal',
     'cover_image' => 'https://images.unsplash.com/photo-1444858291040-58f756a3bdd6?w=1400&q=72',
     'cover_alt'   => 'Terraced agricultural land in Morni, Panchkula',

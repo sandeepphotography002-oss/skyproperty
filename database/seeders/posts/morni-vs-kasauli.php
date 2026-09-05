@@ -8,7 +8,7 @@
 
 return [
     'title'       => 'Morni Hills or Kasauli? An Honest Comparison for Buyers',
-    'slug'        => 'morni-hills-or-kasauli-an-honest-comparison-for-buyers',
+    'slug'        => 'morni-vs-kasauli',
     'category'    => 'investment',
     'cover_image' => 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1400&q=72',
     'cover_alt'   => 'View across the Morni Hills near Panchkula, Haryana',

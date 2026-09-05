@@ -16,6 +16,7 @@
 
 return [
     'title'    => 'A Weekend Home in Morni Hills: What It Is Really Like',
+    'slug'        => 'weekend-home-morni',
     'category' => 'area',
     'cover_image' => 'https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=1400&q=72',
     'cover_alt'   => 'Hill cottage weekend home in Morni Hills surrounded by pine trees',

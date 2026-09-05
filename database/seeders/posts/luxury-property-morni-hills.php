@@ -6,6 +6,7 @@
 
 return [
     'title'       => 'Luxury Property in Morni Hills: What the Word Means Here',
+    'slug'        => 'luxury-property-morni',
     'category'    => 'guide',
     'cover_image' => 'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1400&q=72',
     'cover_alt'   => 'Cottage terrace looking over the Morni valley',

@@ -6,6 +6,7 @@
 
 return [
     'title'       => 'Land Investment in Morni Hills: The Case For and Against',
+    'slug'        => 'land-investment-morni',
     'category'    => 'investment',
     'cover_image' => 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1400&q=72',
     'cover_alt'   => 'Hillside plot with mountain views in Morni',

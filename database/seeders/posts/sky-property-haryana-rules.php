@@ -6,6 +6,7 @@
 
 return [
     'title'       => 'Why Buying in Haryana Is Simpler: Morni and the Himachal Rule',
+    'slug'        => 'sky-property-haryana',
     'category'    => 'legal',
     'cover_image' => 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1400&q=72',
     'cover_alt'   => 'Morni Hills above Panchkula, Haryana',

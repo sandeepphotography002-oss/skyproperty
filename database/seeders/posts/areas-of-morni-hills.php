@@ -11,6 +11,7 @@
 
 return [
     'title'    => 'Where to Buy in Morni: Tikkar Taal, Bhoj Jabial, Mandana and the Rest',
+    'slug'        => 'morni-property-areas',
     'category' => 'area',
     'cover_image' => 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1400&q=72',
     'cover_alt'   => 'Terraced hillsides across the villages of Morni, Panchkula district',

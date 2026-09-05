@@ -6,6 +6,7 @@
 
 return [
     'title'       => 'Farmhouse for Sale in Morni Hills: What Is Usually on the Market',
+    'slug'        => 'farm-house-for-sale-morni',
     'category'    => 'guide',
     'cover_image' => 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1400&q=72',
     'cover_alt'   => 'Farmhouse with orchard land in Morni Hills',

@@ -11,6 +11,7 @@
 
 return [
     'title'    => 'Best and Most Affordable Property in Morni Hills: How to Tell Them Apart',
+    'slug'        => 'best-property-in-morni',
     'category' => 'guide',
     'cover_image' => 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1400&q=72',
     'cover_alt'   => 'Hillside plots for sale in Morni Hills, Panchkula',

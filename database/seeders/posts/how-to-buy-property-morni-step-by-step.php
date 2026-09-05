@@ -11,6 +11,7 @@
 
 return [
     'title'    => 'How to Buy Property in Morni Hills: The Whole Process, Step by Step',
+    'slug'        => 'how-to-buy-property-morni',
     'category' => 'legal',
     'cover_image' => 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1400&q=72',
     'cover_alt'   => 'Land documents being checked before buying property in Morni Hills',

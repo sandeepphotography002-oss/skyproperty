@@ -8,7 +8,7 @@
 
 return [
     'title'       => 'How to Check Land Papers Before Buying in Morni Hills',
-    'slug'        => 'how-to-check-land-papers-before-buying-in-morni-hills',
+    'slug'        => 'land-papers-morni',
     'category'    => 'legal',
     'cover_image' => 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1400&q=72',
     'cover_alt'   => 'Land record documents being examined before a property purchase',

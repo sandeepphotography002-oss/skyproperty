@@ -6,6 +6,7 @@
 
 return [
     'title'       => 'Land in Morni Hills: The Ground Itself, Before the Price',
+    'slug'        => 'land-in-morni',
     'category'    => 'guide',
     'cover_image' => 'https://images.unsplash.com/photo-1444858291040-58f756a3bdd6?w=1400&q=72',
     'cover_alt'   => 'Terraced land in Morni, Panchkula district',

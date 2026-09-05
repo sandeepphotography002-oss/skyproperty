@@ -1,8 +1,39 @@
 @php
-    $s        = config('site');
-    $pageTitle = trim($title ?? '') !== '' ? $title . ' | ' . $s['short_name'] : $s['name'] . ' — ' . $s['tagline'];
-    $pageDesc  = trim($description ?? '') !== '' ? $description
+    $s = config('site');
+
+    /* Brand ka naam sirf tab jodte hain jab title mein pehle se na ho.
+       Blog ke meta_title mein "| Sky Property" pehle se likha hai, aur
+       bina jaanche jodne se "… | Sky Property | Sky Property" ban jaata
+       tha -- jo Google ke result mein waisa hi dikhta. */
+    $t = trim($title ?? '');
+    $pageTitle = $t !== ''
+        ? (stripos($t, $s['short_name']) !== false ? $t : $t . ' | ' . $s['short_name'])
+        : $s['name'] . ' — ' . $s['tagline'];
+
+    $pageDesc = trim($description ?? '') !== '' ? $description
         : 'Plots, farmhouses, cottages and land for sale in Morni Hills, Panchkula. Clear paperwork, honest rates, site visits arranged. Call ' . $s['phone'] . '.';
+
+    /* Har page ke apne keywords; na hon to site ke aam keywords. */
+    $pageKeywords = trim($keywords ?? '') !== '' ? $keywords : implode(', ', [
+        'property in Morni Hills', 'Morni Hills property', 'property for sale in Morni Hills',
+        'property dealer in Morni Hills', 'real estate in Morni Hills',
+        'land in Morni Hills', 'land for sale in Morni Hills',
+        'plots in Morni Hills', 'plot for sale in Morni Hills',
+        'residential plots in Morni Hills', 'farmhouse in Morni Hills',
+        'farm land in Morni Hills', 'agricultural land Morni Hills',
+        'investment property Morni Hills', 'weekend home Morni Hills',
+        'buy property in Morni Hills', 'buy plot in Morni Hills', 'buy land in Morni Hills',
+        'best property in Morni Hills', 'affordable plots in Morni Hills',
+        'scenic plots for sale Morni Hills', 'mountain view plots Morni Hills',
+        'peaceful property Morni Hills', 'property for investment near Chandigarh',
+        'Sky Property Morni Hills', 'Sky Property', 'Sky Property Panchkula',
+        'Sky Property Chandigarh', 'Sky Property Haryana', 'Sky Property Morni',
+        'Sky Property plots', 'Sky Property farmhouse', 'Sky Property land',
+        'Sky Property real estate', 'Sky Property property dealer',
+        'Sky Property property consultant',
+    ]);
+
+    $pageAuthor = trim($author ?? '') !== '' ? $author : $s['name'];
 @endphp
 <!doctype html>
 <html lang="en">
@@ -11,6 +42,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ $pageTitle }}</title>
 <meta name="description" content="{{ $pageDesc }}">
+<meta name="keywords" content="{{ $pageKeywords }}">
+<meta name="author" content="{{ $pageAuthor }}">
+<meta name="publisher" content="{{ $s['name'] }}">
 <link rel="canonical" href="{{ url()->current() }}">
 <meta name="robots" content="index, follow">
 

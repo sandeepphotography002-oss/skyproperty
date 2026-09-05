@@ -10,6 +10,7 @@
 
 return [
     'title'    => 'Water and Electricity in Morni Hills: What to Ask Before You Buy',
+    'slug'        => 'water-in-morni',
     'category' => 'guide',
     'cover_image' => 'https://images.unsplash.com/photo-1444858291040-58f756a3bdd6?w=1400&q=72',
     'cover_alt'   => 'Terraced land in Morni Hills with a seasonal water channel along the lower edge',

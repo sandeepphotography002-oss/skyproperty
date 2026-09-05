@@ -6,6 +6,7 @@
 
 return [
     'title'       => 'Residential Plots in Morni Hills: Why Classification Decides Everything',
+    'slug'        => 'residential-plot-morni',
     'category'    => 'legal',
     'cover_image' => 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1400&q=72',
     'cover_alt'   => 'Valley view over the Morni hills',

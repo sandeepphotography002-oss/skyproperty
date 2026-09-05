@@ -7,6 +7,7 @@
 
 return [
     'title'       => 'Property for Sale in Morni Hills: What Is Available and What to Expect',
+    'slug'        => 'property-for-sale-in-morni',
     'category'    => 'guide',
     'cover_image' => 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1400&q=72',
     'cover_alt'   => 'Open hillside plot for sale in Morni Hills',

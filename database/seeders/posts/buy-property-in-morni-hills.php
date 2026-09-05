@@ -6,6 +6,7 @@
 
 return [
     'title'       => 'Buy Property in Morni Hills: A One-Page Summary',
+    'slug'        => 'buy-property-in-morni',
     'category'    => 'guide',
     'cover_image' => 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1400&q=72',
     'cover_alt'   => 'Hills and terraces around Morni',

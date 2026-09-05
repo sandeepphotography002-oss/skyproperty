@@ -15,6 +15,7 @@
 
 return [
     'title'    => 'Property in Morni Hills: What a Buyer Should Know Before Paying Anything',
+    'slug'        => 'property-in-morni',
     'category' => 'guide',
     'cover_image' => 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1400&q=72',
     'cover_alt'   => 'View across the Morni Hills near Panchkula, Haryana, where property is sold',

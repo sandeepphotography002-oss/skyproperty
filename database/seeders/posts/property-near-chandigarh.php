@@ -14,6 +14,7 @@
 
 return [
     'title'    => 'Buying Property Near Chandigarh: Hills or Below? A Plain Comparison',
+    'slug'        => 'property-near-chandigarh',
     'category' => 'investment',
     'cover_image' => 'https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1400&q=72',
     'cover_alt'   => 'Hills rising above the plains near Panchkula and Pinjore, close to Chandigarh',

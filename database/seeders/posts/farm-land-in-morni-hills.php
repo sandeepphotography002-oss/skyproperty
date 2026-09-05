@@ -6,6 +6,7 @@
 
 return [
     'title'       => 'Farm Land in Morni Hills: Terraces, Water and What Actually Grows',
+    'slug'        => 'farm-land-in-morni',
     'category'    => 'guide',
     'cover_image' => 'https://images.unsplash.com/photo-1444858291040-58f756a3bdd6?w=1400&q=72',
     'cover_alt'   => 'Terraced agricultural land in Morni, Panchkula',

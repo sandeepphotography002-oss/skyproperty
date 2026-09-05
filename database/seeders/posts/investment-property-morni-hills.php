@@ -6,6 +6,7 @@
 
 return [
     'title'       => 'Investment Property in Morni Hills: Which Kind Actually Holds Value',
+    'slug'        => 'investment-property-morni',
     'category'    => 'investment',
     'cover_image' => 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1400&q=72',
     'cover_alt'   => 'Morni Hills above Panchkula, Haryana',

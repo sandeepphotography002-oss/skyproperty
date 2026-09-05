@@ -6,6 +6,7 @@
 
 return [
     'title'       => 'Property With a Mountain View in Morni Hills: Which Views Are Worth Paying For',
+    'slug'        => 'property-with-mountain-view-morni',
     'category'    => 'area',
     'cover_image' => 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1400&q=72',
     'cover_alt'   => 'Valley view across the Morni hills',

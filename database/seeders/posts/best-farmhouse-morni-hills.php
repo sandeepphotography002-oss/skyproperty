@@ -6,6 +6,7 @@
 
 return [
     'title'       => 'The Best Farmhouse in Morni Hills Is Not the Prettiest One',
+    'slug'        => 'best-farmhouse-in-morni',
     'category'    => 'guide',
     'cover_image' => 'https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=1400&q=72',
     'cover_alt'   => 'Stone hill cottage among pines in Morni',

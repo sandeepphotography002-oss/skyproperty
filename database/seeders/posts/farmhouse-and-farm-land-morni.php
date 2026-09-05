@@ -11,6 +11,7 @@
 
 return [
     'title'    => 'Farmhouses and Farm Land in Morni Hills: What You Are Really Buying',
+    'slug'        => 'farmhouse-and-farm-land-morni',
     'category' => 'guide',
     'cover_image' => 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1400&q=72',
     'cover_alt'   => 'Farmhouse on terraced land in Morni Hills with orchard trees around it',

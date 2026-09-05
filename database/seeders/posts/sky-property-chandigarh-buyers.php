@@ -6,6 +6,7 @@
 
 return [
     'title'       => 'Buying in Morni From Chandigarh: What City Buyers Get Wrong',
+    'slug'        => 'sky-property-chandigarh',
     'category'    => 'area',
     'cover_image' => 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1400&q=72',
     'cover_alt'   => 'Road through the pine forest in Morni',

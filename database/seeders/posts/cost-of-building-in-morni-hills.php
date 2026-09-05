@@ -14,6 +14,7 @@
 
 return [
     'title'    => 'What It Costs to Build a House in Morni Hills',
+    'slug'        => 'cost-of-building-in-morni',
     'category' => 'guide',
     'cover_image' => 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1400&q=72',
     'cover_alt'   => 'House under construction on a hillside plot with retaining walls',

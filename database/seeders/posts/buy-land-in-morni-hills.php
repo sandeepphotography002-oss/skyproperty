@@ -6,6 +6,7 @@
 
 return [
     'title'       => 'Buying Land in Morni Hills: What Is Different From Buying a Built Property',
+    'slug'        => 'buy-land-in-morni',
     'category'    => 'legal',
     'cover_image' => 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1400&q=72',
     'cover_alt'   => 'Hillside plot for sale in Morni Hills, Panchkula',

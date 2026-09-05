@@ -6,6 +6,7 @@
 
 return [
     'title'       => 'Sky Property Morni: What We Have, and What We Have That Is Not Listed',
+    'slug'        => 'sky-property-morni-listings',
     'category'    => 'guide',
     'cover_image' => 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1400&q=72',
     'cover_alt'   => 'Plot for sale in the Morni hills',
@@ -53,7 +54,7 @@ return [
 <p>Call or WhatsApp <strong>+91 83073 77270</strong>.</p>
 HTML,
 
-    'meta_title'       => 'Sky Property Morni — Listed and Unlisted Property | Sky Property',
+    'meta_title'       => 'Sky Property Morni — Listed and Unlisted Property',
     'meta_description' => 'Most property in Morni never gets advertised. How to ask for what you actually want, what we cover, and what happens after you call.',
     'keywords'         => 'sky property morni, sky property plots, sky property land, sky property property consultant, morni property listings',
 ];

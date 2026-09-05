@@ -11,6 +11,7 @@
 
 return [
     'title'    => 'Loans, Stamp Duty and the Real Cost of Buying Land in Morni',
+    'slug'        => 'stamp-duty-haryana-land',
     'category' => 'legal',
     'cover_image' => 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1400&q=72',
     'cover_alt'   => 'Calculating the total cost of buying land, beyond the sale price',
