@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Enquiry;
+use App\Models\Post;
 use App\Models\Property;
 use Illuminate\Http\Request;
 
@@ -114,6 +115,42 @@ class SiteController extends Controller
         return view('site.show', compact('property', 'similar'));
     }
 
+    public function blog(Request $request)
+    {
+        $q = Post::live();
+
+        if ($c = $request->query('category')) {
+            $q->where('category', $c);
+        }
+        if ($s = trim((string) $request->query('q'))) {
+            $q->where(fn ($w) => $w->where('title', 'like', "%{$s}%")
+                                   ->orWhere('excerpt', 'like', "%{$s}%")
+                                   ->orWhere('content', 'like', "%{$s}%"));
+        }
+
+        $posts = $q->orderByDesc('is_featured')
+                   ->orderByDesc('published_at')->latest('id')
+                   ->paginate(9)->withQueryString();
+
+        return view('site.blog', compact('posts'));
+    }
+
+    public function post(string $slug)
+    {
+        $post = Post::live()->where('slug', $slug)->firstOrFail();
+
+        /* Ginti seedha badha rahe hain, model event se nahi -- warna
+           har save par bhi badh jaati. Ye asli analytics nahi hai, bas
+           maalik ko andaaza dene ke liye ki kaunsa lekh chal raha hai. */
+        Post::whereKey($post->id)->increment('views');
+
+        $more = Post::live()->where('id', '!=', $post->id)
+            ->orderByRaw('category = ? desc', [$post->category])
+            ->orderByDesc('published_at')->take(3)->get();
+
+        return view('site.post', compact('post', 'more'));
+    }
+
     public function about()
     {
         return view('site.about');
@@ -150,6 +187,17 @@ class SiteController extends Controller
             if (Property::visible()->where('type', $type)->exists()) {
                 $urls[] = ['loc' => route('properties', ['type' => $type]), 'pri' => '0.7', 'freq' => 'weekly'];
             }
+        }
+
+        $urls[] = ["loc" => route("blog"), "pri" => "0.8", "freq" => "weekly"];
+
+        foreach (Post::live()->latest("updated_at")->get() as $b) {
+            $urls[] = [
+                "loc"  => route("post", $b->slug),
+                "pri"  => "0.7",
+                "freq" => "monthly",
+                "mod"  => optional($b->updated_at)->toAtomString(),
+            ];
         }
 
         foreach (Property::visible()->latest('updated_at')->get() as $p) {

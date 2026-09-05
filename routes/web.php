@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\EnquiryController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\PropertyController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
@@ -16,6 +17,9 @@ Route::get('/',            [SiteController::class, 'home'])->name('home');
 Route::get('/properties',  [SiteController::class, 'properties'])->name('properties');
 Route::get('/about',       [SiteController::class, 'about'])->name('about');
 Route::get('/contact',     [SiteController::class, 'contact'])->name('contact');
+
+Route::get('/blog',        [SiteController::class, 'blog'])->name('blog');
+Route::get('/blog/{slug}', [SiteController::class, 'post'])->name('post');
 
 Route::post('/enquiry', [SiteController::class, 'enquiry'])
     ->middleware('throttle:10,1')          // ek IP se ghante mein das
@@ -50,6 +54,14 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::post('properties/{property}/images',        [PropertyController::class, 'uploadImages'])->name('properties.images');
     Route::delete('properties/{property}/images',      [PropertyController::class, 'deleteImage'])->name('properties.images.delete');
     Route::post('properties/{property}/cover',         [PropertyController::class, 'setCover'])->name('properties.cover');
+
+    Route::get('posts',               [PostController::class, 'index'])->name('posts.index');
+    Route::get('posts/create',        [PostController::class, 'create'])->name('posts.create');
+    Route::post('posts',              [PostController::class, 'store'])->name('posts.store');
+    Route::get('posts/{post}/edit',   [PostController::class, 'edit'])->name('posts.edit');
+    Route::put('posts/{post}',        [PostController::class, 'update'])->name('posts.update');
+    Route::delete('posts/{post}',     [PostController::class, 'destroy'])->name('posts.destroy');
+    Route::post('posts/{post}/cover', [PostController::class, 'uploadCover'])->name('posts.cover');
 
     Route::get('enquiries',               [EnquiryController::class, 'index'])->name('enquiries.index');
     Route::put('enquiries/{enquiry}',     [EnquiryController::class, 'update'])->name('enquiries.update');

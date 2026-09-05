@@ -18,6 +18,15 @@
   </div>
 </div>
 
+<div class="tiles">
+  <div class="tile"><b>{{ $posts }}</b><span>Blog posts</span></div>
+  <div class="tile"><b>{{ $postsLive }}</b><span>Published</span></div>
+  <div class="tile"><b>{{ $postsDraft }}</b><span>Draft</span></div>
+  <div class="tile" style="display:flex;align-items:center">
+    <a class="btn btn-primary" href="{{ route('admin.posts.create') }}" style="width:100%;justify-content:center">📝 Write a Post</a>
+  </div>
+</div>
+
 <div class="card">
   <div class="top" style="margin-bottom:14px">
     <h2>Latest enquiries</h2>
@@ -38,6 +47,38 @@
               <td>{{ $e->property_title ?: '—' }}</td>
               <td><span class="pill pill-off">{{ $e->status_label }}</span></td>
               <td>{{ $e->created_at?->diffForHumans() }}</td>
+            </tr>
+          @endforeach
+        </tbody>
+      </table>
+    </div>
+  @endif
+</div>
+
+<div class="card">
+  <div class="top" style="margin-bottom:14px">
+    <h2>Latest blog posts</h2>
+    <div class="sp"><a href="{{ route('admin.posts.index') }}">See all →</a></div>
+  </div>
+
+  @if($recentPost->isEmpty())
+    <div class="empty">
+      Abhi koi blog post nahi hai.
+      <div style="margin-top:14px"><a class="btn btn-primary" href="{{ route('admin.posts.create') }}">Pehla post likho</a></div>
+    </div>
+  @else
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Title</th><th>Category</th><th>Date</th><th>Views</th><th>Status</th><th></th></tr></thead>
+        <tbody>
+          @foreach($recentPost as $p)
+            <tr>
+              <td><strong>{{ $p->title }}</strong><div class="hint">{{ $p->reading_time }}</div></td>
+              <td>{{ $p->category_label }}</td>
+              <td>{{ $p->date_label ?: '—' }}</td>
+              <td>{{ number_format($p->views) }}</td>
+              <td><span class="pill {{ $p->status === 'published' ? 'pill-ok' : 'pill-off' }}">{{ ucfirst($p->status) }}</span></td>
+              <td><a class="btn btn-ghost btn-sm" href="{{ route('admin.posts.edit', $p) }}">Edit</a></td>
             </tr>
           @endforeach
         </tbody>

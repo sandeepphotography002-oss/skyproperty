@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Enquiry;
+use App\Models\Post;
 use App\Models\Property;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -13,13 +14,17 @@ class PropertyController extends Controller
     public function dashboard()
     {
         return view('admin.dashboard', [
-            'total'     => Property::count(),
-            'available' => Property::where('status', 'available')->count(),
-            'sold'      => Property::whereIn('status', ['sold', 'rented'])->count(),
-            'enquiries' => Enquiry::count(),
-            'unseen'    => Enquiry::unseen()->count(),
-            'latest'    => Enquiry::latest('id')->take(5)->get(),
-            'recent'    => Property::latest('id')->take(5)->get(),
+            'total'      => Property::count(),
+            'available'  => Property::where('status', 'available')->count(),
+            'sold'       => Property::whereIn('status', ['sold', 'rented'])->count(),
+            'enquiries'  => Enquiry::count(),
+            'unseen'     => Enquiry::unseen()->count(),
+            'latest'     => Enquiry::latest('id')->take(5)->get(),
+            'recent'     => Property::latest('id')->take(5)->get(),
+            'posts'      => Post::count(),
+            'postsLive'  => Post::where('status', 'published')->count(),
+            'postsDraft' => Post::where('status', 'draft')->count(),
+            'recentPost' => Post::latest('id')->take(5)->get(),
         ]);
     }
 

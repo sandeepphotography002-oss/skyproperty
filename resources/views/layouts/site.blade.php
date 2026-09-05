@@ -183,6 +183,7 @@ img{max-width:100%;display:block}
     <nav class="nav" id="nav">
       <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'on' : '' }}">Home</a>
       <a href="{{ route('properties') }}" class="{{ request()->routeIs('properties') ? 'on' : '' }}">Properties</a>
+      <a href="{{ route('blog') }}" class="{{ request()->routeIs('blog', 'post') ? 'on' : '' }}">Guide</a>
       <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'on' : '' }}">About</a>
       <a href="{{ route('contact') }}" class="{{ request()->routeIs('contact') ? 'on' : '' }}">Contact</a>
       <a class="hdr-call" href="tel:{{ $s['phone_link'] }}">📞 {{ $s['phone'] }}</a>
@@ -218,6 +219,7 @@ img{max-width:100%;display:block}
       <div>
         <h4>Company</h4>
         <ul>
+          <li><a href="{{ route('blog') }}">Morni Property Guide</a></li>
           <li><a href="{{ route('about') }}">About Us</a></li>
           <li><a href="{{ route('contact') }}">Contact</a></li>
           <li><a href="{{ route('properties', ['type' => 'resort']) }}">Resorts</a></li>

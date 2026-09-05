@@ -116,6 +116,7 @@ textarea{resize:vertical;min-height:90px}
       @if($unseen)<span class="badge live">{{ $unseen }}</span>@endif
     </a>
     <a class="item" href="{{ route('admin.properties.create') }}">➕ Add Property</a>
+    <a class="item {{ request()->routeIs('admin.posts.*') ? 'on' : '' }}" href="{{ route('admin.posts.index') }}">📝 Blog</a>
 
     <div class="grp">Site</div>
     <a class="item" href="{{ route('home') }}" target="_blank">🌐 View Website</a>
