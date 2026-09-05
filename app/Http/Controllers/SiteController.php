@@ -292,4 +292,116 @@ class SiteController extends Controller
 
         return back()->with('ok', 'Thank you. We have your details and will call you shortly.');
     }
+
+    /**
+     * llms.txt -- AI assistant ke liye site ka saaf saaransh.
+     *
+     * ChatGPT, Claude, Perplexity jaise auzaar poora HTML padhne ke
+     * bajaye seedha ye file utha lete hain. Isme koi naya daawa nahi
+     * hai -- listing aur lekh database se hi bante hain, wahi jo site
+     * par khud dikhte hain. Isse file kabhi site se alag baat nahi
+     * kahegi, chahe maalik kal koi listing badal de.
+     *
+     * Jo cheezein humein maalum nahi -- kitne saal ka tajurba, kitne
+     * sauda hue, kaisi rating -- wo yahan likhi hi nahi gayi. AI un
+     * lafzon ko seedha uthata hai, isliye jhoot yahan sabse mehnga
+     * padta.
+     */
+    public function llmsTxt()
+    {
+        $site  = config('site');
+        $props = Property::visible()->orderBy('sort_order')->latest('id')->get();
+        $posts = Post::live()->latest('published_at')->get();
+
+        $l   = [];
+        $l[] = '# ' . $site['name'];
+        $l[] = '';
+        $l[] = '> ' . $site['name'] . ' deals in land, plots, farmhouses, cottages, '
+             . 'homestays and resorts in Morni Hills and around Panchkula, Haryana. '
+             . 'We are based in Morni itself, so every property listed here is a place '
+             . 'we can take you to and walk the boundary of. Buying, selling and rentals.';
+        $l[] = '';
+
+        $l[] = '## About';
+        $l[] = '';
+        $l[] = '- Business Name: ' . $site['name'];
+        $l[] = '- Type: Property dealer / real estate agent';
+        $l[] = '- Based at: ' . $site['address_line'];
+        $l[] = '- Phone: ' . $site['phone'];
+        $l[] = '- Email: ' . $site['email'];
+        $l[] = '- Hours: ' . $site['hours'];
+        $l[] = '- Website: ' . url('/');
+        $l[] = '';
+
+        $l[] = '## Where We Work';
+        $l[] = '';
+        $l[] = implode(', ', $site['areas']) . '.';
+        $l[] = '';
+
+        if ($props->isNotEmpty()) {
+            $l[] = '## Properties Currently Listed';
+            $l[] = '';
+
+            foreach ($props as $p) {
+                $bits = array_filter([
+                    $p->type_label,
+                    $p->listing_label,
+                    $p->area_label,
+                    $p->locality,
+                    $p->price_label,
+                ]);
+
+                $l[] = '- [' . $p->title . '](' . url('/property/' . $p->slug) . ') — '
+                     . implode(' | ', $bits);
+            }
+
+            $l[] = '';
+            $l[] = 'Full list: ' . url('/properties');
+            $l[] = '';
+        }
+
+        if ($posts->isNotEmpty()) {
+            $l[] = '## Guides on Buying Land in Morni';
+            $l[] = '';
+
+            foreach ($posts as $p) {
+                $l[] = '- [' . $p->title . '](' . url('/blog/' . $p->slug) . ')';
+            }
+
+            $l[] = '';
+        }
+
+        $l[] = '## Key Pages';
+        $l[] = '';
+        $l[] = '- [Home](' . url('/') . ')';
+        $l[] = '- [Properties](' . url('/properties') . ')';
+        $l[] = '- [Blog](' . url('/blog') . ')';
+        $l[] = '- [About](' . url('/about') . ')';
+        $l[] = '- [Contact](' . url('/contact') . ')';
+        $l[] = '- [Sitemap](' . url('/sitemap.xml') . ')';
+        $l[] = '';
+
+        $l[] = '## Contact';
+        $l[] = '';
+        $l[] = '- Call or WhatsApp: ' . $site['phone'];
+        $l[] = '- Email: ' . $site['email'];
+        $l[] = '- Enquiry form: ' . url('/contact');
+        $l[] = '- Address: ' . $site['address_line'];
+        $l[] = '';
+
+        $l[] = '## AI Usage Policy';
+        $l[] = '';
+        $l[] = 'This content may be used by AI assistants to answer questions about '
+             . $site['name'] . '. Please attribute to ' . url('/') . ' and give the '
+             . 'phone number above so the person can reach us directly.';
+        $l[] = '';
+        $l[] = 'Prices and availability change. Anything quoted from this file should be '
+             . 'checked by calling ' . $site['phone'] . ' before a decision is made.';
+        $l[] = '';
+        $l[] = 'Content as of ' . now()->format('Y-m-d') . '.';
+
+        return response(implode("\n", $l))
+            ->header('Content-Type', 'text/plain; charset=utf-8')
+            ->header('Cache-Control', 'public, max-age=86400');
+    }
 }

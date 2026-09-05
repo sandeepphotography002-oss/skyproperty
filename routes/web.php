@@ -28,6 +28,10 @@ Route::post('/enquiry', [SiteController::class, 'enquiry'])
 Route::get('/sitemap.xml', [SiteController::class, 'sitemap'])->name('sitemap');
 Route::get('/robots.txt',  [SiteController::class, 'robots'])->name('robots');
 
+/* AI assistant seedha yahi file padh lete hain, HTML se guzarne ke
+   bajaye. Banti database se hi hai, isliye site se alag baat nahi karti. */
+Route::get('/llms.txt',    [SiteController::class, 'llmsTxt'])->name('llms');
+
 /* Wildcard sabse aakhir mein. Upar hota to /about ko bhi ek property
    ka slug samajh kar 404 de deta. */
 Route::get('/property/{slug}', [SiteController::class, 'show'])->name('property');
