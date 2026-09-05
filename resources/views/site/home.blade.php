@@ -7,8 +7,8 @@
 .hero{position:relative;min-height:min(92vh,780px);display:flex;align-items:center;
   color:#fff;padding:96px 0 84px;overflow:hidden;
   background:
-    linear-gradient(100deg, rgba(4,26,48,.90) 0%, rgba(4,26,48,.70) 42%, rgba(4,26,48,.44) 100%),
-    linear-gradient(to top, rgba(4,26,48,.74) 0%, rgba(4,26,48,0) 46%),
+    linear-gradient(100deg, rgba(14,30,12,.90) 0%, rgba(14,30,12,.70) 42%, rgba(14,30,12,.44) 100%),
+    linear-gradient(to top, rgba(14,30,12,.74) 0%, rgba(14,30,12,0) 46%),
     url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1900&q=72') center/cover no-repeat;
   background-attachment:scroll, scroll, fixed}
 /* Phone par fixed background lag karta hai aur kai jagah chalta hi
@@ -37,7 +37,7 @@
   border-radius:10px;font-size:15px;font-family:inherit;color:var(--ink);background:var(--bg);
   transition:border-color .18s, box-shadow .18s}
 .finder input:focus,.finder select:focus{outline:0;border-color:var(--brand);
-  box-shadow:0 0 0 3px rgba(9,59,101,.14);background:#fff}
+  box-shadow:0 0 0 3px rgba(81,135,63,.16);background:#fff}
 
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:46px}
 .stat{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);
@@ -57,7 +57,7 @@
 .cat:hover img{transform:scale(1.08)}
 .cat span{position:absolute;inset:auto 0 0 0;padding:52px 20px 18px;color:#fff;font-weight:700;
   font-size:17.5px;letter-spacing:-.01em;
-  background:linear-gradient(transparent,rgba(4,22,40,.88));
+  background:linear-gradient(transparent,rgba(14,28,12,.88));
   display:flex;align-items:center;justify-content:space-between;gap:10px}
 .cat span:after{content:"→";font-size:19px;opacity:0;transform:translateX(-6px);
   transition:opacity .25s, transform .25s}
@@ -70,15 +70,15 @@
   transition:transform .24s cubic-bezier(.22,.61,.36,1), box-shadow .24s, border-color .24s}
 .why-item:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#d8cbb4}
 .why-ico{width:50px;height:50px;border-radius:13px;
-  background:linear-gradient(140deg,#e7eef6,#d7e4f0);color:var(--brand);
+  background:linear-gradient(140deg,#e9f1e4,#d9e7d1);color:var(--brand);
   display:grid;place-items:center;font-size:23px;margin-bottom:16px;
-  box-shadow:inset 0 0 0 1px rgba(9,59,101,.08)}
+  box-shadow:inset 0 0 0 1px rgba(81,135,63,.10)}
 .why-item h3{font-size:18.5px;margin-bottom:8px}
 .why-item p{color:var(--muted);font-size:14.5px;margin:0;line-height:1.75}
 
 /* cta band */
 .band{background:linear-gradient(135deg,var(--brand),var(--brand-d));color:#fff;
-  border-radius:20px;padding:48px 44px;box-shadow:0 18px 50px rgba(9,59,101,.28);
+  border-radius:20px;padding:48px 44px;box-shadow:0 18px 50px rgba(81,135,63,.30);
   display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;
   position:relative;overflow:hidden}
 /* Kone mein halka sa ujaala -- flat hare dabbe se behtar lagta hai. */

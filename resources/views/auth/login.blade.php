@@ -11,7 +11,7 @@
 :root{--ink:#16202b;--muted:#5c6a76;--line:#dfe4e9;--brand:#093b65;--brand-d:#062a4a}
 *{box-sizing:border-box}
 body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;
-  background:linear-gradient(rgba(6,26,45,.74),rgba(6,26,45,.84)),
+  background:linear-gradient(rgba(14,30,12,.76),rgba(14,30,12,.86)),
     url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=65') center/cover fixed no-repeat;
   color:var(--ink);font:15px/1.6 Inter,system-ui,sans-serif}
 .box{background:#fff;border-radius:16px;padding:34px 32px;width:100%;max-width:400px;

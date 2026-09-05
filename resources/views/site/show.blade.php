@@ -20,7 +20,7 @@
 
 .p-head{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:22px}
 .p-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
-.badge{background:#e7eef6;color:var(--brand);padding:5px 12px;border-radius:7px;font-size:12.5px;font-weight:700;letter-spacing:.02em}
+.badge{background:#e9f1e4;color:var(--brand);padding:5px 12px;border-radius:7px;font-size:12.5px;font-weight:700;letter-spacing:.02em}
 .badge-warn{background:#fdeceb;color:#a63a33}
 .p-price{font-family:Fraunces,serif;font-size:33px;font-weight:700;color:var(--brand);margin:10px 0 4px}
 .p-loc{color:var(--muted);font-size:15px;margin:0}

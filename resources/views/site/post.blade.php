@@ -8,7 +8,7 @@
 .crumb a{color:var(--muted)}
 
 .art{max-width:820px;margin:0 auto;padding:0 0 60px}
-.art-cat{display:inline-block;background:#e7eef6;color:var(--brand);padding:5px 13px;
+.art-cat{display:inline-block;background:#e9f1e4;color:var(--brand);padding:5px 13px;
   border-radius:7px;font-size:12.5px;font-weight:700;margin-bottom:14px}
 .art h1{font-size:clamp(27px,4vw,42px);margin-bottom:14px}
 .art-meta{display:flex;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:14px;
@@ -35,7 +35,7 @@
 .faqbox{margin:38px 0 8px}
 .faqbox h2{font-size:24px;margin-bottom:16px}
 .fq{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:11px;overflow:hidden}
-.fq[open]{border-color:#c9d9ea;box-shadow:0 5px 20px rgba(9,35,60,.07)}
+.fq[open]{border-color:#cfe0c4;box-shadow:0 5px 20px rgba(35,50,28,.07)}
 .fq summary{list-style:none;cursor:pointer;display:flex;gap:12px;align-items:flex-start;
   padding:15px 18px;font-weight:600;font-size:16px;line-height:1.5}
 .fq summary::-webkit-details-marker{display:none}
@@ -49,7 +49,7 @@
 .author{display:flex;gap:16px;background:var(--soft);border-radius:var(--radius);
   padding:22px 24px;margin:34px 0 0}
 .author-ic{width:52px;height:52px;flex:0 0 52px;border-radius:50%;
-  background:linear-gradient(140deg,var(--brand),#1a5f96);color:#fff;
+  background:linear-gradient(140deg,var(--brand),#6da354);color:#fff;
   display:grid;place-items:center;font-size:23px}
 .author h3{font-size:16px;margin:0 0 4px;font-family:Inter,sans-serif}
 .author p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.7}

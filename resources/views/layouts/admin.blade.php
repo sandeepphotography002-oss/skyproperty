@@ -16,9 +16,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* Rang logo se -- navy mukhya, green uchhaal ke liye. */
-:root{--ink:#16202b;--muted:#5c6a76;--line:#dfe4e9;--soft:#eef2f6;
-  --brand:#093b65;--brand-d:#062a4a;--brand-deep:#041d34;
-  --leaf:#51873f;--gold:#b8802a}
+:root{--ink:#1c2419;--muted:#616b5c;--line:#e0e4da;--soft:#eef2e8;
+  --brand:#51873f;--brand-d:#416e33;--brand-deep:#1e3a17;
+  --navy:#093b65;--gold:#b8802a}
 *{box-sizing:border-box}
 body{margin:0;background:#f2f5f3;color:var(--ink);font:15px/1.6 Inter,system-ui,sans-serif}
 a{color:var(--brand);text-decoration:none}
@@ -28,14 +28,14 @@ h1{font-size:24px}h2{font-size:19px}h3{font-size:16px}
 
 .shell{display:grid;grid-template-columns:238px 1fr;min-height:100vh}
 
-.side{background:var(--brand-deep);color:#c4d1de;padding:20px 0}
+.side{background:var(--brand-deep);color:#c6d2bd;padding:20px 0}
 .side-brand{padding:0 20px 18px;border-bottom:1px solid rgba(255,255,255,.14);margin-bottom:14px}
 .side-brand b{display:block;color:#fff;font-size:16px}
-.side-brand span{font-size:11.5px;color:#8fa4b8;letter-spacing:.05em;text-transform:uppercase}
-.side a.item{display:flex;align-items:center;gap:11px;padding:11px 20px;color:#c4d1de;font-size:14.5px}
+.side-brand span{font-size:11.5px;color:#93a58b;letter-spacing:.05em;text-transform:uppercase}
+.side a.item{display:flex;align-items:center;gap:11px;padding:11px 20px;color:#c6d2bd;font-size:14.5px}
 .side a.item:hover{background:rgba(255,255,255,.09);color:#fff;text-decoration:none}
 .side a.item.on{background:var(--brand);color:#fff;font-weight:600}
-.side .grp{padding:16px 20px 6px;font-size:11px;color:#7c90a4;text-transform:uppercase;letter-spacing:.08em}
+.side .grp{padding:16px 20px 6px;font-size:11px;color:#7f9077;text-transform:uppercase;letter-spacing:.08em}
 .badge{margin-left:auto;background:#d64545;color:#fff;border-radius:99px;
   padding:1px 8px;font-size:11.5px;font-weight:700;min-width:20px;text-align:center}
 @keyframes blip{0%,100%{opacity:1}50%{opacity:.45}}

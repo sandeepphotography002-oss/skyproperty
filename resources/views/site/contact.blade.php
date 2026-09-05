@@ -5,7 +5,7 @@
 .cwrap{display:grid;grid-template-columns:1fr 400px;gap:40px;align-items:start;padding:48px 0 66px}
 .cinfo{display:grid;gap:16px}
 .crow{display:flex;gap:15px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px}
-.crow .ic{width:44px;height:44px;flex:0 0 44px;border-radius:11px;background:#e7eef6;
+.crow .ic{width:44px;height:44px;flex:0 0 44px;border-radius:11px;background:#e9f1e4;
   display:grid;place-items:center;font-size:20px}
 .crow h3{font-size:15px;margin:0 0 3px;font-family:Inter,sans-serif;font-weight:700}
 .crow p,.crow a{margin:0;color:var(--muted);font-size:15px}

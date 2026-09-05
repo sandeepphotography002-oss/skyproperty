@@ -69,22 +69,24 @@
    dono chipke hue lagte hain; cream par unke kinaare dikhte hain aur
    poora page mehnga lagta hai. Ye ek badlaav sabse zyada farak dalta
    hai, aur baaki sab uske aas-paas tay hua hai. */
-/* Rang logo se aaye hain, meri pasand se nahi. Navy #093b65 aur green
-   #51873f seedha logo ki file se naape gaye hain, taaki site aur logo
-   ek hi cheez lagein -- do alag hare rang aamne-saamne hamesha bure
-   lagte hain. Navy mukhya hai (logo mein wahi bhaari hai), green
-   uchhaal ke liye. */
+/* Rang logo se naape gaye hain, meri pasand se nahi: green #51873f aur
+   navy #093b65. Green mukhya hai. Pehle navy ko mukhya banaya tha kyunki
+   logo mein wo bhaari dikhta hai -- par bhari hui jagah par navy thanda
+   aur sarkari lagta hai, aur pahaad-zameen ke dhande se mel nahi khata.
+   Navy ab sirf gehre hisson mein hai. */
 :root{
-  --ink:#16202b; --muted:#5c6a76; --line:#dfe4e9;
-  --bg:#f9fafb; --soft:#eef2f6; --card:#ffffff;
+  --ink:#1c2419; --muted:#616b5c; --line:#e0e4da;
+  --bg:#f9faf6; --soft:#eef2e8; --card:#ffffff;
   /* --brand hi mukhya rang hai. Naam "navy" nahi rakha kyunki agar
      kabhi brand ka rang badla, to naam jhooth bolne lagta. */
-  --brand:#093b65; --brand-d:#062a4a; --brand-deep:#041d34;
-  --leaf:#51873f; --leaf-d:#3f6d31;
+  --brand:#51873f; --brand-d:#416e33; --brand-deep:#1e3a17;
+  /* Navy logo mein hai par mukhya nahi -- headings aur gehre
+     hisson ke liye rakha hai, bhare hue dabbon ke liye nahi. */
+  --navy:#093b65; --navy-d:#062a4a;
   --gold:#b8802a; --gold-l:#d9a24a;
-  --shadow-s:0 2px 10px rgba(30,45,35,.06);
-  --shadow:0 10px 34px rgba(30,45,35,.10);
-  --shadow-l:0 26px 70px rgba(20,35,25,.20);
+  --shadow-s:0 2px 10px rgba(35,50,28,.06);
+  --shadow:0 10px 34px rgba(35,50,28,.10);
+  --shadow-l:0 26px 70px rgba(25,42,18,.20);
   --radius:16px;
 }
 *{box-sizing:border-box}
@@ -129,8 +131,8 @@ img{max-width:100%;display:block}
   transition:transform .18s cubic-bezier(.22,.61,.36,1), box-shadow .18s, background .18s}
 .btn:hover{text-decoration:none;transform:translateY(-2px)}
 .btn:active{transform:translateY(0)}
-.btn-primary{background:var(--brand);color:#fff;box-shadow:0 6px 18px rgba(43,99,71,.26)}
-.btn-primary:hover{background:var(--brand-d);box-shadow:0 10px 26px rgba(43,99,71,.32)}
+.btn-primary{background:var(--brand);color:#fff;box-shadow:0 6px 18px rgba(81,135,63,.30)}
+.btn-primary:hover{background:var(--brand-d);box-shadow:0 10px 26px rgba(81,135,63,.38)}
 .btn-gold{background:linear-gradient(135deg,var(--gold-l),var(--gold));color:#fff;
   box-shadow:0 6px 18px rgba(184,128,42,.30)}
 .btn-gold:hover{box-shadow:0 10px 26px rgba(184,128,42,.38)}
@@ -139,13 +141,13 @@ img{max-width:100%;display:block}
 .btn-block{width:100%;justify-content:center}
 
 /* ── header ── */
-.hdr{position:sticky;top:0;z-index:60;background:rgba(251,248,242,.88);
+.hdr{position:sticky;top:0;z-index:60;background:rgba(249,250,246,.88);
   backdrop-filter:saturate(160%) blur(14px);-webkit-backdrop-filter:saturate(160%) blur(14px);
   border-bottom:1px solid transparent;transition:border-color .25s, box-shadow .25s, background .25s}
 /* Scroll karte hi header ko kinaara aur halki chhaya mil jaati hai --
    tabhi jab uske neeche kuch ho. Shuru se lagi rehti to hero se juda
    hua lagta. */
-.hdr.stuck{border-bottom-color:var(--line);box-shadow:0 4px 20px rgba(30,45,35,.07);background:rgba(251,248,242,.96)}
+.hdr.stuck{border-bottom-color:var(--line);box-shadow:0 4px 20px rgba(35,50,28,.07);background:rgba(249,250,246,.96)}
 .hdr-in{display:flex;align-items:center;gap:22px;height:74px}
 .brand{display:flex;align-items:center;gap:11px;font-family:Fraunces,serif;font-weight:700;font-size:20px;color:var(--ink)}
 .brand:hover{text-decoration:none}
@@ -154,9 +156,17 @@ img{max-width:100%;display:block}
 .nav{margin-left:auto;display:flex;align-items:center;gap:26px}
 .nav a{color:var(--ink);font-size:15px;font-weight:500}
 .nav a.on{color:var(--brand);font-weight:600}
-.hdr-call{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#fff;
-  padding:10px 18px;border-radius:9px;font-weight:600;font-size:14.5px}
-.hdr-call:hover{background:var(--brand-d);text-decoration:none}
+/* Phone number header ka sabse kaam ka hissa hai -- yahi se log
+   call karte hain. Isliye bhara hua button, moti likhaawat aur
+   number thoda bada, taaki nazar seedha ispar jaye. */
+.hdr-call{display:inline-flex;align-items:center;gap:9px;
+  background:var(--brand);color:#fff !important;
+  padding:11px 20px;border-radius:10px;font-weight:700;font-size:15.5px;
+  letter-spacing:.01em;white-space:nowrap;
+  box-shadow:0 5px 16px rgba(81,135,63,.34);
+  transition:background .18s, box-shadow .18s, transform .18s}
+.hdr-call:hover{background:var(--brand-d);text-decoration:none;transform:translateY(-1px);
+  box-shadow:0 8px 22px rgba(81,135,63,.42)}
 .burger{display:none;margin-left:auto;background:none;border:0;font-size:26px;cursor:pointer;color:var(--ink);line-height:1;padding:4px 8px}
 
 /* ── cards ── */
@@ -173,9 +183,9 @@ img{max-width:100%;display:block}
 /* Photo ke neeche halka andhera, taaki uspar rakhe tag hamesha padhe
    ja sakein -- chahe photo halki ho ya gehri. */
 .card-img:after{content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(180deg,rgba(15,25,18,.28) 0%,rgba(15,25,18,0) 38%)}
+  background:linear-gradient(180deg,rgba(18,28,14,.30) 0%,rgba(18,28,14,0) 38%)}
 .card-tag{position:absolute;top:12px;left:12px;z-index:2;
-  background:rgba(20,38,28,.82);backdrop-filter:blur(6px);color:#fff;
+  background:rgba(24,40,18,.82);backdrop-filter:blur(6px);color:#fff;
   padding:6px 12px;border-radius:8px;font-size:12px;font-weight:600;letter-spacing:.03em}
 .card-status{position:absolute;top:12px;right:12px;z-index:2;padding:6px 12px;border-radius:8px;
   font-size:12px;font-weight:700;color:#fff;letter-spacing:.03em}
