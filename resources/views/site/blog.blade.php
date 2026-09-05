@@ -96,4 +96,58 @@
     @endif
   </div>
 </section>
+
+{{-- Sirf card wali list Google ke liye lagbhag khaali hoti hai. Ye
+     hissa batata hai ki ye guide kis liye hai aur kis kram mein padha
+     jaye -- naye padhne wale ke liye bhi kaam ka hai. --}}
+<section class="sec sec-soft">
+  <div class="wrap" style="max-width:880px">
+
+    <h2>What this guide is for</h2>
+
+    <p style="color:#3d4a44">
+      We are asked the same questions on the phone every week &mdash; what land costs,
+      which papers to check, whether farm land can be built on, whether Morni is a good
+      investment. These pages are those answers, written down properly, so you can read
+      them before you call rather than after you have paid a token amount.
+    </p>
+
+    <p style="color:#3d4a44">
+      Some of it argues against buying here. Hill land resells slowly, agricultural land
+      cannot be built on without permission, and half the beautiful plots have no road to
+      them. We would rather write that down than have you find it out yourself.
+    </p>
+
+    <h3>Where to start</h3>
+
+    <ul style="list-style:none;padding:0;margin:0 0 8px">
+      <li style="position:relative;padding-left:26px;margin-bottom:11px;line-height:1.7">
+        <span style="position:absolute;left:0;color:var(--brand);font-weight:700">1.</span>
+        <a href="{{ route('post', 'property-in-morni-hills-what-a-buyer-should-know-before-paying-anything') }}">Property in Morni Hills</a>
+        &mdash; start here if you are new to the area
+      </li>
+      <li style="position:relative;padding-left:26px;margin-bottom:11px;line-height:1.7">
+        <span style="position:absolute;left:0;color:var(--brand);font-weight:700">2.</span>
+        <a href="{{ route('post', 'how-to-check-land-papers-before-buying-in-morni-hills') }}">How to check land papers</a>
+        &mdash; read this before you pay anything to anyone
+      </li>
+      <li style="position:relative;padding-left:26px;margin-bottom:11px;line-height:1.7">
+        <span style="position:absolute;left:0;color:var(--brand);font-weight:700">3.</span>
+        <a href="{{ route('post', 'where-to-buy-in-morni-tikkar-taal-bhoj-jabial-mandana-and-the-rest') }}">Where to buy in Morni</a>
+        &mdash; the pockets, and what each one suits
+      </li>
+      <li style="position:relative;padding-left:26px;margin-bottom:11px;line-height:1.7">
+        <span style="position:absolute;left:0;color:var(--brand);font-weight:700">4.</span>
+        <a href="{{ route('post', 'is-property-in-morni-hills-a-good-investment-an-honest-look') }}">Is it a good investment?</a>
+        &mdash; including the parts that cost us sales
+      </li>
+    </ul>
+
+    <p style="color:#3d4a44;margin-bottom:0">
+      Anything these pages do not answer, call
+      <a href="tel:{{ $s['phone_link'] }}">{{ $s['phone'] }}</a> and ask us directly.
+      That is where all of this came from anyway.
+    </p>
+  </div>
+</section>
 @endsection

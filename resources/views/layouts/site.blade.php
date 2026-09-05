@@ -218,6 +218,23 @@ img{max-width:100%;display:block}
 .alert-ok{background:#e8f5ee;color:#1d5b3d;border:1px solid #bfe0cd}
 .alert-err{background:#fdeceb;color:#8f2c26;border:1px solid #f3c9c6}
 
+/* ── FAQ accordion ──
+   Char page ispar chalte hain (post, properties, about, contact),
+   isliye yahan hai. --}}*/
+.faqbox{margin:38px 0 8px}
+.faqbox h2{font-size:24px;margin-bottom:16px}
+.fq{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:11px;overflow:hidden}
+.fq[open]{border-color:#cfe0c4;box-shadow:0 5px 20px rgba(35,50,28,.07)}
+.fq summary{list-style:none;cursor:pointer;display:flex;gap:12px;align-items:flex-start;
+  padding:15px 18px;font-weight:600;font-size:16px;line-height:1.5}
+.fq summary::-webkit-details-marker{display:none}
+.fq summary:hover{background:#fafcfb}
+.fq-plus{flex:0 0 22px;width:22px;height:22px;border-radius:50%;background:var(--brand);
+  color:#fff;display:grid;place-items:center;font-size:15px;font-weight:700;
+  margin-top:1px;transition:transform .22s;line-height:1}
+.fq[open] .fq-plus{transform:rotate(45deg)}
+.fq-a{padding:0 18px 17px 52px;color:#5c6a64;font-size:15px;line-height:1.8}
+
 /* ── whatsapp ── */
 /* Do tairte hue button, ek ke upar ek. WhatsApp neeche kyunki angootha
    wahan sabse aasani se pahunchta hai; call uske upar. Dono ek hi

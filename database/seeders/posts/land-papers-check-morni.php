@@ -67,6 +67,35 @@ return [
   <li>A local advocate has read all of it</li>
 </ul>
 
+<h2>How to read a jamabandi without being a lawyer</h2>
+
+<p>The document looks forbidding and is not. Four things on it decide whether you should keep going.</p>
+
+<ul>
+  <li><strong>The owner's name and share.</strong> Land is often held in fractions between family members. A seller with a one-third share cannot sell you the whole plot, however confidently he speaks.</li>
+  <li><strong>The khasra number.</strong> This ties the paper to a specific piece of ground. Note it and use it for everything afterwards.</li>
+  <li><strong>The area recorded.</strong> Compare it with what you were told. A gap here is common on old hill records and has to be resolved before, not after.</li>
+  <li><strong>The classification.</strong> Whether the land is recorded as agricultural. This decides whether a house can go on it.</li>
+</ul>
+
+<p>If those four are clean and consistent with what you were shown on the ground, the deal is worth taking further. If any one of them does not match, stop and ask why before spending anything else.</p>
+
+<h2>Who does what in the process</h2>
+
+<div class="tbl">
+<table>
+  <thead><tr><th>Person</th><th>What they do</th><th>What they cannot do</th></tr></thead>
+  <tbody>
+    <tr><td>Patwari</td><td>Keeps the village land records and the map</td><td>Decide a dispute</td></tr>
+    <tr><td>Tehsildar's office</td><td>Registration, mutation, stamp duty</td><td>Guarantee a title is sound</td></tr>
+    <tr><td>Your advocate</td><td>Reads the papers and tells you the risk</td><td>Make a bad title good</td></tr>
+    <tr><td>The dealer</td><td>Finds the property, arranges the visit</td><td>Replace any of the above</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>That last row includes us. A dealer showing you a folder is not the same as an advocate reading it, and any dealer who suggests otherwise is doing you a disservice.</p>
+
 <h2>What each document actually looks like</h2>
 
 <p>Buyers are handed a folder and nod at it. It helps to know what you are holding.</p>

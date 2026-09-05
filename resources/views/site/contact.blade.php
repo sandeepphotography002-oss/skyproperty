@@ -138,4 +138,24 @@
     </div>
   </aside>
 </div>
+
+<section class="sec sec-soft">
+  <div class="wrap" style="max-width:880px">
+    @include('site.partials.faq', [
+        'faqTitle' => 'Before You Call',
+        'faqs' => [
+            ['q' => 'What should I have ready when I call?', 'a' => 'A rough budget, the kind of property, and what it is for &mdash; a weekend house, an investment, an orchard or a stay to run. Those four lead to very different land, so the purpose helps more than the budget alone.'],
+            ['q' => 'How quickly do you reply?', 'a' => 'Same day, usually within the hour during working hours. If you send an enquiry at night, expect a call the next morning.'],
+            ['q' => 'How soon can I visit?', 'a' => 'Usually within a day or two. Call ahead so a route can be planned &mdash; we will line up three or four properties for one trip, which teaches you more than any description.'],
+            ['q' => 'Is there any charge to visit?', 'a' => 'None. No visit fee, no booking amount, no obligation. Nobody should be asking you for money before you have seen the papers.'],
+            ['q' => 'Where exactly are you?', 'a' => 'Morni, Panchkula, Haryana 134205 &mdash; about 45 km from Panchkula and an hour and a half to two hours from Chandigarh, depending on the road.'],
+            ['q' => 'What are your hours?', 'a' => 'Monday to Sunday, 9 AM to 7 PM. Morning visits are better, especially in the monsoon when the road slows everything down.'],
+            ['q' => 'Can I message on WhatsApp instead?', 'a' => 'Yes, on the same number: +91 83073 77270. It is often easier for sending photographs or a khasra number.'],
+            ['q' => 'I want to sell my property in Morni. Can you help?', 'a' => 'Yes. Send the khasra number and whatever papers you have, and we will tell you honestly what it is likely to fetch and roughly how long it may take.'],
+            ['q' => 'Do you deal outside Morni?', 'a' => 'Yes &mdash; Tikkar Taal, Bhoj Jabial, Mandana, Thandog and Baldwala in the hills, and Panchkula, Pinjore, Kalka and Raipur Rani below them.'],
+            ['q' => 'What if you do not have what I want?', 'a' => 'We will say so, and call you when it comes up. A good deal of what we handle never reaches the website, so it is always worth asking.'],
+        ],
+    ])
+  </div>
+</section>
 @endsection

@@ -59,6 +59,37 @@ return [
   <li><strong>Farming as a business.</strong> Terraces are small and most water is seasonal. People do farm here, but few get rich at it.</li>
 </ul>
 
+<h2>The drive, compared</h2>
+
+<p>People pick a hill station on a map and discover the road afterwards. Worth doing it the other way round.</p>
+
+<div class="tbl">
+<table>
+  <thead><tr><th>&nbsp;</th><th>Road</th><th>In monsoon</th><th>At night</th></tr></thead>
+  <tbody>
+    <tr><td>Morni</td><td>Narrow, proper hairpins</td><td>Slower; some weekends you skip</td><td>Not enjoyable the first few times</td></tr>
+    <tr><td>Kasauli / Solan</td><td>Shimla highway, then a climb</td><td>Generally reliable</td><td>Manageable</td></tr>
+    <tr><td>Parwanoo</td><td>Highway nearly all the way</td><td>Easiest of the three</td><td>Fine</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p>Drive whichever you are considering both ways in one weekend before you buy. The Sunday evening run tells you more about whether this will work for your family than any plot inspection.</p>
+
+<h2>What each place is like to be in</h2>
+
+<h3>Morni</h3>
+<p>Quiet, genuinely. A few shops, a school, villages and terraces. There is no market to stroll, no line of cafes. For most buyers that is the whole point, but it should be a choice and not a surprise on the first weekend.</p>
+
+<h3>Kasauli</h3>
+<p>A proper hill town with a Mall Road, hotels, restaurants and other people. Pleasant, and busy at weekends. If you want somewhere to walk out to in the evening, this is that and Morni is not.</p>
+
+<h3>Solan</h3>
+<p>Larger, more of a working town than a retreat, with better services and less charm. It suits people who want hill living with a hospital and a college nearby.</p>
+
+<h3>Parwanoo</h3>
+<p>Closest to Chandigarh and the most industrial of the four. Good for commuting; less good for the thing most people are imagining when they say "a place in the hills".</p>
+
 <h2>What the Himachal restriction means in practice</h2>
 
 <p>People hear "restricted" and assume it means impossible. It does not, and it is worth understanding properly because it is the whole reason for the price gap.</p>

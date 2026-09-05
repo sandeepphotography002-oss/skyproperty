@@ -120,6 +120,28 @@
 </section>
 
 <section class="sec">
+  <div class="wrap" style="max-width:880px">
+    @include('site.partials.faq', [
+        'faqTitle' => 'Questions About Working With Us',
+        'faqs' => [
+            ['q' => 'Where are you based?', 'a' => 'Morni, Panchkula district, Haryana 134205 &mdash; in the hills themselves, not a Chandigarh office that drives up at weekends. It matters, because in a small place we sell to people who become our neighbours.'],
+            ['q' => 'What do you deal in?', 'a' => 'Residential plots, agricultural and farm land, farmhouses, hill cottages, resorts and homestays, and some rentals, across Morni and down through Panchkula, Pinjore and Kalka.'],
+            ['q' => 'Do you charge for a site visit?', 'a' => 'No. No charge, no booking amount, no obligation. We will plan three or four properties in a day so you can compare properly.'],
+            ['q' => 'How much brokerage do you charge?', 'a' => 'It is a percentage, and it should be agreed openly at the start rather than produced at the end. Ask and we will tell you before you see anything.'],
+            ['q' => 'Will you tell me if a property is overpriced?', 'a' => 'Yes. We would rather lose a sale than have you find out afterwards, and we will tell you what similar land nearby actually sold for.'],
+            ['q' => 'Do you handle property with unclear title?', 'a' => 'No, whatever the margin. A disputed plot in the hills can sit unusable for years, and you would live with that while we would not.'],
+            ['q' => 'Can I bring my own advocate?', 'a' => 'Please do. We recommend it even though it slows our own deals down. A few thousand rupees against a purchase worth lakhs is the cheapest insurance in the transaction.'],
+            ['q' => 'Do you help after the sale?', 'a' => 'Yes &mdash; registry, mutation into your name, and finding a caretaker or a contractor. Being local means we are still here afterwards, which is rather the point.'],
+            ['q' => 'Can you help me sell my land in Morni?', 'a' => 'Yes. Call with the khasra number and the papers and we will tell you honestly what it is likely to fetch and roughly how long it may take.'],
+            ['q' => 'Do you promise returns on investment?', 'a' => 'No, and be careful with anyone who does. Land prices here depend on roads, tourism and decisions no dealer controls.'],
+            ['q' => 'Do you have customer reviews?', 'a' => 'Not on this site yet, and we are not going to write ourselves any. Judge us instead on a phone number that is answered, an address you can visit, and land records you can check before believing a word we say.'],
+            ['q' => 'What are your working hours?', 'a' => 'Monday to Sunday, 9 AM to 7 PM. Site visits are best started in the morning, especially during the monsoon.'],
+        ],
+    ])
+  </div>
+</section>
+
+<section class="sec sec-soft">
   <div class="wrap center">
     <h2>Come and see for yourself</h2>
     <p class="lead" style="margin-bottom:24px">

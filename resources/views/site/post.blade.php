@@ -65,20 +65,6 @@
 .art-body img{border-radius:12px;margin:18px 0}
 .art-body a{text-decoration:underline}
 
-.faqbox{margin:38px 0 8px}
-.faqbox h2{font-size:24px;margin-bottom:16px}
-.fq{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:11px;overflow:hidden}
-.fq[open]{border-color:#cfe0c4;box-shadow:0 5px 20px rgba(35,50,28,.07)}
-.fq summary{list-style:none;cursor:pointer;display:flex;gap:12px;align-items:flex-start;
-  padding:15px 18px;font-weight:600;font-size:16px;line-height:1.5}
-.fq summary::-webkit-details-marker{display:none}
-.fq summary:hover{background:#fafcfb}
-.fq-plus{flex:0 0 22px;width:22px;height:22px;border-radius:50%;background:var(--brand);
-  color:#fff;display:grid;place-items:center;font-size:15px;font-weight:700;
-  margin-top:1px;transition:transform .22s;line-height:1}
-.fq[open] .fq-plus{transform:rotate(45deg)}
-.fq-a{padding:0 18px 17px 52px;color:#5c6a64;font-size:15px;line-height:1.8}
-
 .author{display:flex;gap:16px;background:var(--soft);border-radius:var(--radius);
   padding:22px 24px;margin:34px 0 0}
 .author-ic{width:52px;height:52px;flex:0 0 52px;border-radius:50%;

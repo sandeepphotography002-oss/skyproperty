@@ -30,6 +30,17 @@
 .pager .hidden,.pager [aria-disabled="true"]{opacity:.42}
 .pager svg{width:16px;height:16px}
 
+.plist{max-width:880px}
+.plist h2{margin:0 0 14px}
+.plist h3{font-size:19px;margin:30px 0 10px}
+.plist p{color:#3d4a44}
+.plist-ul,.plist-ol{margin:0 0 18px;padding-left:0;list-style:none}
+.plist-ul li,.plist-ol li{position:relative;padding-left:26px;margin-bottom:10px;line-height:1.75}
+.plist-ul li:before{content:"—";position:absolute;left:0;color:var(--brand);font-weight:700}
+.plist-ol{counter-reset:p}
+.plist-ol li:before{counter-increment:p;content:counter(p) ".";position:absolute;left:0;
+  color:var(--brand);font-weight:700}
+
 @media(max-width:1080px){ .filters{grid-template-columns:1fr 1fr 1fr;margin-top:0} }
 @media(max-width:620px){ .filters{grid-template-columns:1fr 1fr} }
 @endsection
@@ -122,6 +133,79 @@
 
       <div class="pager">{{ $properties->onEachSide(1)->links() }}</div>
     @endif
+
+  </div>
+</section>
+
+{{-- Listing ke neeche likha hua hissa. Sirf card wala page Google ke
+     liye lagbhag khaali hota hai -- na koi sawaal ka jawab, na koi
+     sandarbh. Ye hissa listing badalne par bhi kaam ka rehta hai. --}}
+<section class="sec sec-soft">
+  <div class="wrap plist">
+
+    <h2>Buying Property in Morni Hills</h2>
+
+    <p class="lead" style="max-width:none">
+      Everything above is in Morni and around Panchkula &mdash; residential plots,
+      agricultural land, farmhouses, hill cottages, and stays that are already running.
+      Listings change every week, and a good deal of what we handle never reaches this page.
+      If nothing here fits, call and describe what you want.
+    </p>
+
+    <h3>What is on this page</h3>
+    <ul class="plist-ul">
+      <li><strong>Residential plots</strong> &mdash; 5 to 20 marla, the simplest thing to buy and build on</li>
+      <li><strong>Agricultural and farm land</strong> &mdash; kanal and acre, cheaper, but a change of land use is needed before building</li>
+      <li><strong>Farmhouses</strong> &mdash; built houses with land, often with an orchard</li>
+      <li><strong>Hill cottages</strong> &mdash; smaller built homes, ready to use</li>
+      <li><strong>Resorts and homestays</strong> &mdash; running businesses, sold as going concerns</li>
+      <li><strong>Rentals</strong> &mdash; cottages let for longer stays</li>
+    </ul>
+
+    <h3>How to use the filters</h3>
+    <p>
+      Budget is entered in lakh rather than rupees, because nobody types 5000000.
+      Every filter stays in the address bar, so a search can be sent to somebody as a link
+      &mdash; useful when two people are deciding together.
+    </p>
+
+    <h3>Three things to check on any listing here</h3>
+    <ol class="plist-ol">
+      <li><strong>The approach road.</strong> It decides construction cost, how often you go, and what the plot is worth later. Walk it end to end.</li>
+      <li><strong>The water source.</strong> A village line, a borewell, or a seasonal channel that is dry from January to June. Those are not the same thing.</li>
+      <li><strong>The classification.</strong> Residential land can be built on. Agricultural land cannot, until the use is formally changed.</li>
+    </ol>
+
+    <p>
+      Land records in Haryana are public. Look a plot up yourself at
+      <a href="https://jamabandi.nic.in/" target="_blank" rel="noopener nofollow">jamabandi.nic.in</a>
+      using the khasra number before your second visit. We would rather you did.
+    </p>
+
+    <p style="margin-bottom:0">
+      More detail in our <a href="{{ route('blog') }}">Morni property guide</a> &mdash;
+      <a href="{{ route('post', 'plots-and-land-for-sale-in-morni-hills-sizes-rates-and-what-to-check') }}">plots and land</a>,
+      <a href="{{ route('post', 'farmhouses-and-farm-land-in-morni-hills-what-you-are-really-buying') }}">farmhouses</a>,
+      and <a href="{{ route('post', 'how-to-check-land-papers-before-buying-in-morni-hills') }}">checking the papers</a>.
+    </p>
+
+    @include('site.partials.faq', [
+        'faqTitle' => 'Questions About Buying Here',
+        'faqs' => [
+            ['q' => 'How often are new properties added?', 'a' => 'Most weeks. A good deal of what we handle never reaches the website at all, so call with what you want even if nothing listed fits today.'],
+            ['q' => 'Are the prices shown negotiable?', 'a' => 'Usually there is some room, and how much depends on how long the property has been available and why the owner is selling. We will tell you what similar land nearby actually sold for, which is a more useful number than the asking price.'],
+            ['q' => 'What does "Price on request" mean?', 'a' => 'That the owner has not fixed a figure, generally because it depends on how much land you take or what is included. Call and we will give you a range.'],
+            ['q' => 'Can I see a property the same week?', 'a' => 'Usually yes. Call or WhatsApp +91 83073 77270 a day or two ahead so a route can be planned, and we will show you three or four in a day.'],
+            ['q' => 'Do you charge for site visits?', 'a' => 'No. No charge, no booking amount and no obligation at that stage. Nobody should be asking you for money before you have seen the papers.'],
+            ['q' => 'What area units are used here?', 'a' => 'Marla, kanal and acre. One marla is about 272 sq ft, twenty marla make a kanal, and eight kanal make an acre. Be careful with bigha, which varies locally &mdash; get the area written in kanal or acre.'],
+            ['q' => 'Can someone from outside Haryana buy here?', 'a' => 'Residential plots in Morni can be bought by any Indian citizen. This is the practical difference from Kasauli and Solan, where Himachal restricts buyers from outside the state.'],
+            ['q' => 'What documents will I need to check?', 'a' => 'Jamabandi, mutation, khasra number and map, non-encumbrance certificate, and the land use classification. Have your own advocate read them, not only us.'],
+            ['q' => 'Do you help with registry and mutation?', 'a' => 'Yes, through the tehsil until the mutation is entered in your name. That last step is the one people leave half finished and it causes trouble at resale.'],
+            ['q' => 'Are these properties available for rent?', 'a' => 'Some. Use the Sale / Rent filter above. Most of what we handle is for sale; rentals are mainly cottages let for longer stays.'],
+            ['q' => 'Can I sell my property in Morni through you?', 'a' => 'Yes. Call with the khasra number and the papers, and we will tell you honestly what it is likely to fetch and roughly how long it may take.'],
+            ['q' => 'Why do two similar plots cost very different amounts?', 'a' => 'The approach road, mostly, then water, slope and classification. The view has almost nothing to do with it, because nearly everything here has one.'],
+        ],
+    ])
 
   </div>
 </section>
