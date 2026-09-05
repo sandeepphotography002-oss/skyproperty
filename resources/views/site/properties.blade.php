@@ -1,4 +1,8 @@
-@extends('layouts.site')
+@extends('layouts.site', [
+    'title'       => 'Properties for Sale in Morni Hills — Plots, Land, Farmhouses',
+    'description' => 'Browse plots, agricultural land, farmhouses, cottages and stays for sale in Morni Hills and Panchkula. Filter by type, location and budget.',
+    'keywords'    => 'property for sale in Morni Hills, plots in Morni Hills, plot for sale in Morni Hills, land for sale in Morni Hills, residential plots in Morni Hills, residential land for sale Morni Hills, farm land for sale Morni Hills, farm house for sale Morni Hills, buy plot in Morni Hills, buy land in Morni Hills, buy farmhouse in Morni Hills, affordable plots in Morni Hills, best plots in Morni Hills, scenic plots for sale Morni Hills, mountain view plots Morni Hills, Sky Property plots, Sky Property land',
+])
 
 @section('style')
 .phead{background:var(--soft);border-bottom:1px solid var(--line);padding:44px 0 40px}

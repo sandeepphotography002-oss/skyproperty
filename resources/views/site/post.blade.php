@@ -2,7 +2,6 @@
     'title'       => $post->meta_title ?: $post->title,
     'description' => $post->meta_description ?: $post->summary,
     'keywords'    => $post->keywords,
-    'author'      => $post->author_name,
 ])
 
 @section('style')

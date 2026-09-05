@@ -1,4 +1,8 @@
-@extends('layouts.site')
+@extends('layouts.site', [
+    'title'       => 'Property in Morni Hills — Plots, Land & Farmhouses for Sale',
+    'description' => 'Plots, farm land, farmhouses and cottages for sale in Morni Hills, Panchkula. Clear papers, honest rates, free site visits. Call +91 83073 77270.',
+    'keywords'    => 'property in Morni Hills, Morni Hills property, property for sale in Morni Hills, real estate in Morni Hills, land in Morni Hills, plots in Morni Hills, farmhouse in Morni Hills, buy property in Morni Hills, best property in Morni Hills, affordable property in Morni Hills, property dealer in Morni Hills, Sky Property Morni Hills, Sky Property, Sky Property Morni',
+])
 
 @section('style')
 /* Hero ka andhera ek taraf se doosri taraf jaata hai, har jagah barabar

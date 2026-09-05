@@ -1,4 +1,8 @@
-@extends('layouts.site')
+@extends('layouts.site', [
+    'title'       => 'About Sky Property Morni Hills — Property Dealer in Morni',
+    'description' => 'Sky Property Morni Hills is based in Morni, Panchkula. How a purchase runs with us, what we will not do, and what to ask any property dealer here.',
+    'keywords'    => 'Sky Property Morni Hills, Sky Property, Sky Property Morni, Sky Property Panchkula, Sky Property Haryana, Sky Property property dealer, Sky Property property consultant, Sky Property real estate, property dealer in Morni Hills, real estate Morni Hills, real estate in Morni Hills',
+])
 
 @section('style')
 .ahero{background:linear-gradient(rgba(14,26,20,.6),rgba(14,26,20,.72)),

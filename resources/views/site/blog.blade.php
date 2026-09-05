@@ -1,4 +1,8 @@
-@extends('layouts.site')
+@extends('layouts.site', [
+    'title'       => 'Morni Property Guide — Buying Land, Plots and Farmhouses',
+    'description' => 'Everything we are asked on the phone, written down: what land costs in Morni Hills, which papers to check, and whether it is worth buying here.',
+    'keywords'    => 'Morni Hills property guide, buying land in Morni Hills, land in Morni Hills, plot in Morni Hills, farm land in Morni Hills, agricultural land Morni Hills, investment property Morni Hills, property investment Morni Hills, land investment Morni Hills, weekend home Morni Hills, best property investment near Chandigarh, property for investment near Chandigarh',
+])
 
 @section('style')
 .bhead{background:var(--soft);border-bottom:1px solid var(--line);padding:46px 0 42px;text-align:center}

@@ -33,7 +33,15 @@
         'Sky Property property consultant',
     ]);
 
-    $pageAuthor = trim($author ?? '') !== '' ? $author : $s['name'];
+    /* Website ka author aur publisher: Sandeep Photography, jinhone ye
+       site banayi hai. Ye tag site ka credit hai.
+
+       Dhyan rahe: har lekh ka apna lekhak alag hai aur wo JSON-LD ke
+       BlogPosting mein Sky Property Morni Hills hi rehta hai. Google
+       lekh ka lekhak wahin se padhta hai, is tag se nahi -- aur zameen
+       ki salah dene wala property wala hi hona chahiye, photographer
+       nahi. Dono cheezein saath chal rahi hain. */
+    $pageAuthor = 'Sandeep Photography';
 @endphp
 <!doctype html>
 <html lang="en">
@@ -44,7 +52,7 @@
 <meta name="description" content="{{ $pageDesc }}">
 <meta name="keywords" content="{{ $pageKeywords }}">
 <meta name="author" content="{{ $pageAuthor }}">
-<meta name="publisher" content="{{ $s['name'] }}">
+<meta name="publisher" content="Sandeep Photography">
 <link rel="canonical" href="{{ url()->current() }}">
 <meta name="robots" content="index, follow">
 

@@ -1,4 +1,8 @@
-@extends('layouts.site')
+@extends('layouts.site', [
+    'title'       => 'Contact Sky Property Morni Hills — +91 83073 77270',
+    'description' => 'Call or WhatsApp +91 83073 77270 for plots, land and farmhouses in Morni Hills, Panchkula. Free site visits, no booking amount, same-day reply.',
+    'keywords'    => 'contact Sky Property Morni Hills, Sky Property Chandigarh, Sky Property Panchkula, property dealer in Morni Hills, property consultant Morni Hills, site visit Morni Hills, buy property in Morni Hills, Morni Hills property enquiry',
+])
 
 @section('style')
 .chead{background:var(--soft);border-bottom:1px solid var(--line);padding:46px 0 42px;text-align:center}

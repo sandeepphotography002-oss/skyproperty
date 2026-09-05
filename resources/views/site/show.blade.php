@@ -1,4 +1,17 @@
-@extends('layouts.site')
+{{-- Har property apne shabd bhejti hai: uska type, uski jagah, aur
+     wahi keyword jo aisi property dhoondhne wala likhta hai. --}}
+@extends('layouts.site', [
+    'title'       => $property->meta_title ?: $property->title . ' in ' . $property->full_location,
+    'description' => $property->meta_description ?: $property->short_description,
+    'keywords'    => $property->keyword ?: implode(', ', array_filter([
+        $property->type_label . ' in ' . $property->city,
+        $property->type_label . ' for sale in Morni Hills',
+        $property->locality ? 'property in ' . $property->locality : null,
+        'property in Morni Hills', 'land in Morni Hills', 'plots in Morni Hills',
+        'buy property in Morni Hills', 'property for sale in Morni Hills',
+        'Sky Property Morni Hills', 'Sky Property plots', 'Sky Property land',
+    ])),
+])
 
 @section('style')
 .crumb{padding:16px 0;font-size:13.5px;color:var(--muted)}
