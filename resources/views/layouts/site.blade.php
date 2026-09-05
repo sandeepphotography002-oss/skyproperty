@@ -219,17 +219,38 @@ img{max-width:100%;display:block}
 .alert-err{background:#fdeceb;color:#8f2c26;border:1px solid #f3c9c6}
 
 /* ── whatsapp ── */
-.wa{position:fixed;right:18px;bottom:18px;z-index:70;width:56px;height:56px;border-radius:50%;
-  background:#25d366;display:grid;place-items:center;box-shadow:0 8px 26px rgba(37,211,102,.42);
+/* Do tairte hue button, ek ke upar ek. WhatsApp neeche kyunki angootha
+   wahan sabse aasani se pahunchta hai; call uske upar. Dono ek hi
+   column mein rakhe hain taaki content daayen se ek hi jagah dabe. */
+.fabs{position:fixed;right:18px;bottom:18px;z-index:70;
+  display:flex;flex-direction:column;gap:12px;align-items:center}
+.fab{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;
   transition:transform .22s cubic-bezier(.22,.61,.36,1), box-shadow .22s}
-.wa:hover{text-decoration:none;transform:scale(1.08);box-shadow:0 12px 34px rgba(37,211,102,.55)}
-.wa svg{width:30px;height:30px;fill:#fff}
+.fab:hover{text-decoration:none;transform:scale(1.08)}
+.fab svg{width:29px;height:29px;fill:#fff}
+
+.fab-call{background:var(--brand);box-shadow:0 8px 26px rgba(81,135,63,.44)}
+.fab-call:hover{box-shadow:0 12px 34px rgba(81,135,63,.58)}
+.wa{background:#25d366;box-shadow:0 8px 26px rgba(37,211,102,.42)}
+.wa:hover{box-shadow:0 12px 34px rgba(37,211,102,.55)}
+.wa svg{width:30px;height:30px}
+
+/* Bade screen par button ke saath naam bhi -- jagah hai, aur likha
+   hua hone se pata chalta hai ki dabane par kya hoga. Phone par sirf
+   gol nishaan, warna aadhi screen inhi se bhar jaati hai. */
+.fab-label{position:absolute;right:66px;top:50%;transform:translateY(-50%) translateX(6px);
+  background:#1f2a1b;color:#fff;font-size:13px;font-weight:600;white-space:nowrap;
+  padding:7px 13px;border-radius:8px;opacity:0;pointer-events:none;
+  transition:opacity .2s, transform .2s}
+.fab-wrap{position:relative;display:block}
+.fab-wrap:hover .fab-label{opacity:1;transform:translateY(-50%)}
+@media(max-width:640px){ .fab-label{display:none} }
 /* Dhadkan sirf ek baar, page khulne ke baad. Lagataar hilta button
    dhyaan kheenchta hai par thoda der baad chidhaane lagta hai. */
 @keyframes waPulse{0%{box-shadow:0 8px 26px rgba(37,211,102,.42),0 0 0 0 rgba(37,211,102,.55)}
   70%{box-shadow:0 8px 26px rgba(37,211,102,.42),0 0 0 16px rgba(37,211,102,0)}
   100%{box-shadow:0 8px 26px rgba(37,211,102,.42),0 0 0 0 rgba(37,211,102,0)}}
-.wa{animation:waPulse 2.2s ease-out 1.4s 3}
+.fab.wa{animation:waPulse 2.2s ease-out 1.4s 3}
 
 @media(max-width:980px){
   .g4{grid-template-columns:repeat(2,1fr)}
@@ -279,8 +300,9 @@ img{max-width:100%;display:block}
   <div class="wrap">
     <div class="ftr-grid">
       <div>
-        <img src="{{ asset('brand/logo.png') }}" alt="{{ $s['name'] }}"
-             style="width:132px;height:auto;margin-bottom:16px;filter:brightness(0) invert(1);opacity:.94">
+        <img src="{{ asset('brand/logo-white.png') }}" alt="{{ $s['name'] }}"
+             width="640" height="770"
+             style="width:126px;height:auto;margin-bottom:18px">
         <h4>{{ $s['name'] }}</h4>
         <p style="font-size:14.5px;line-height:1.75">
           Plots, farmhouses, cottages and land in Morni Hills and around Panchkula.
@@ -329,10 +351,28 @@ img{max-width:100%;display:block}
   </div>
 </footer>
 
-<a class="wa" href="https://wa.me/{{ $s['whatsapp'] }}?text={{ urlencode('Hello, I am interested in a property in Morni Hills.') }}"
-   target="_blank" rel="noopener" aria-label="WhatsApp par baat karein">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15s-.77.97-.94 1.17c-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35M12.05 21.8h-.02c-1.74 0-3.45-.47-4.94-1.35l-.35-.21-3.67.96.98-3.58-.23-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.13 1.03 7 2.9a9.82 9.82 0 0 1 2.9 6.99c0 5.45-4.44 9.89-9.9 9.89M20.52 3.45A11.78 11.78 0 0 0 12.05 0C5.5 0 .17 5.33.17 11.88c0 2.09.55 4.14 1.59 5.94L.07 24l6.33-1.66a11.83 11.83 0 0 0 5.65 1.44h.01c6.54 0 11.87-5.33 11.88-11.88 0-3.17-1.24-6.15-3.48-8.4"/></svg>
-</a>
+<div class="fabs">
+
+  {{-- Call ka button WhatsApp ke upar. Bahut log WhatsApp par
+       likhna nahi chahte, seedha baat karna chahte hain -- aur
+       zameen ke sawaal likhne se zyada bolkar poochhe jaate hain. --}}
+  <div class="fab-wrap">
+    <span class="fab-label">Call {{ $s['phone'] }}</span>
+    <a class="fab fab-call" href="tel:{{ $s['phone_link'] }}"
+       aria-label="Call {{ $s['phone'] }}">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    </a>
+  </div>
+
+  <div class="fab-wrap">
+    <span class="fab-label">WhatsApp</span>
+    <a class="fab wa" href="https://wa.me/{{ $s['whatsapp'] }}?text={{ urlencode('Hello, I am interested in a property in Morni Hills.') }}"
+       target="_blank" rel="noopener" aria-label="WhatsApp par baat karein">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15s-.77.97-.94 1.17c-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35M12.05 21.8h-.02c-1.74 0-3.45-.47-4.94-1.35l-.35-.21-3.67.96.98-3.58-.23-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.13 1.03 7 2.9a9.82 9.82 0 0 1 2.9 6.99c0 5.45-4.44 9.89-9.9 9.89M20.52 3.45A11.78 11.78 0 0 0 12.05 0C5.5 0 .17 5.33.17 11.88c0 2.09.55 4.14 1.59 5.94L.07 24l6.33-1.66a11.83 11.83 0 0 0 5.65 1.44h.01c6.54 0 11.87-5.33 11.88-11.88 0-3.17-1.24-6.15-3.48-8.4"/></svg>
+    </a>
+  </div>
+
+</div>
 
 <script>
   /* Mobile menu. Ek button, ek class -- library ki zaroorat nahi. */
