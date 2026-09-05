@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\EnquiryReceived;
 use App\Models\Enquiry;
 use App\Models\Post;
 use App\Models\Property;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 
 class SiteController extends Controller
 {
@@ -264,10 +267,28 @@ class SiteController extends Controller
             ? Property::find($data['property_id'])
             : null;
 
-        Enquiry::create($data + [
+        $enquiry = Enquiry::create($data + [
             'property_title' => $property?->title,
             'source_page'    => $request->input('source_page') ?: url()->previous(),
         ]);
+
+        /* Enquiry pehle database mein jaa chuki hai. Mail uske baad, aur
+           try/catch ke andar -- mail server band ho, credentials galat
+           hon, ya SMTP timeout ho, to bhi grahak ko error nahi dikhna
+           chahiye aur enquiry nahi khoni chahiye. Dashboard hi asli
+           jagah hai; mail sirf turant khabar ke liye hai. */
+        try {
+            $to = array_filter(array_map('trim', explode(',', (string) config('site.notify_email'))));
+
+            if ($to) {
+                Mail::to($to)->send(new EnquiryReceived($enquiry));
+            }
+        } catch (\Throwable $e) {
+            Log::warning('Enquiry mail nahi gaya', [
+                'enquiry_id' => $enquiry->id,
+                'error'      => $e->getMessage(),
+            ]);
+        }
 
         return back()->with('ok', 'Thank you. We have your details and will call you shortly.');
     }

@@ -19,6 +19,11 @@ return [
     'whatsapp'      => '918307377270',
     'email'         => 'balvindersingh134205@gmail.com',
 
+    /* Nayi enquiry ki khabar yahan jaati hai. Comma se ek se zyada
+       bhi de sakte ho. Khaali chhod do to mail band, aur enquiry
+       sirf dashboard mein jaati hai -- site phir bhi chalti rahegi. */
+    'notify_email'  => env('NOTIFY_EMAIL', 'balvindersingh134205@gmail.com'),
+
     'address' => [
         'street'   => 'Morni',
         'locality' => 'Morni',
