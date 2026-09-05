@@ -24,6 +24,14 @@ return [
        sirf dashboard mein jaati hai -- site phir bhi chalti rahegi. */
     'notify_email'  => env('NOTIFY_EMAIL', 'balvindersingh134205@gmail.com'),
 
+    /* Asli pata. Iske alawa kisi bhi subdomain par aaya request
+       301 se yahan bhej diya jaata hai.
+
+       Zaroorat isliye padi ki pehla subdomain "spkyproperty" tha --
+       "sky" ki jagah "spky" likha gaya tha. Purana pata poster par
+       chhap chuka hai, isliye use band nahi kar sakte. */
+    'canonical_host' => env('CANONICAL_HOST', ''),
+
     'address' => [
         'street'   => 'Morni',
         'locality' => 'Morni',

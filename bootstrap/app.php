@@ -11,7 +11,9 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        /* Sabse pehle chalta hai, taaki purane subdomain wala request
+           kuch aur hone se pehle hi naye pate par chala jaye. */
+        $middleware->prepend(\App\Http\Middleware\CanonicalHost::class);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
