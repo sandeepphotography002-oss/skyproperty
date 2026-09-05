@@ -58,46 +58,86 @@
 </script>
 
 <style>
+/* Ground safed nahi, halka cream hai. Flat #fff par photo aur card
+   dono chipke hue lagte hain; cream par unke kinaare dikhte hain aur
+   poora page mehnga lagta hai. Ye ek badlaav sabse zyada farak dalta
+   hai, aur baaki sab uske aas-paas tay hua hai. */
 :root{
-  --ink:#1b2420; --muted:#5f6d66; --line:#e3e8e4; --bg:#ffffff; --soft:#f6f8f6;
-  --green:#2f6b4f; --green-d:#245740; --gold:#c08a2e; --shadow:0 6px 28px rgba(20,40,30,.08);
-  --radius:14px;
+  --ink:#1a221d; --muted:#5f6d66; --line:#e6ded0;
+  --bg:#fbf8f2; --soft:#f4efe4; --card:#ffffff;
+  --green:#2b6347; --green-d:#1e4b35; --green-deep:#14261c;
+  --gold:#b8802a; --gold-l:#d9a24a;
+  --shadow-s:0 2px 10px rgba(30,45,35,.06);
+  --shadow:0 10px 34px rgba(30,45,35,.10);
+  --shadow-l:0 26px 70px rgba(20,35,25,.20);
+  --radius:16px;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4{font-family:Fraunces,Georgia,serif;line-height:1.22;margin:0 0 14px;letter-spacing:-.01em}
-h1{font-size:clamp(30px,4.6vw,50px)}
-h2{font-size:clamp(24px,3.2vw,34px)}
-h3{font-size:20px}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.72 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,h4{font-family:Fraunces,Georgia,serif;line-height:1.16;margin:0 0 14px;letter-spacing:-.018em}
+h1{font-size:clamp(32px,5vw,56px);letter-spacing:-.028em}
+h2{font-size:clamp(25px,3.4vw,38px)}
+h3{font-size:20px;letter-spacing:-.01em}
 p{margin:0 0 15px}
 a{color:var(--green);text-decoration:none}
 a:hover{text-decoration:underline}
 img{max-width:100%;display:block}
 .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
-.sec{padding:62px 0}
+.sec{padding:72px 0}
 .sec-soft{background:var(--soft)}
+
+/* Har bade section ke upar ek patli sunehri lakeer. Ye chhoti cheez
+   page ko hisson mein baant deti hai bina ek aur border ke. */
+.sec-soft{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+/* Scroll par halka sa upar aana. Bahut dheema rakha hai -- design ko
+   sajaana nahi, sirf itna ki page zinda lage. Jinhone system mein
+   animation band ki hui hai unke liye ye poori tarah band ho jaata
+   hai; unke liye ye chakkar aane ki wajah banta hai. */
+[data-rise]{opacity:0;transform:translateY(18px);
+  transition:opacity .6s cubic-bezier(.22,.61,.36,1),transform .6s cubic-bezier(.22,.61,.36,1)}
+[data-rise].in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  [data-rise]{opacity:1;transform:none;transition:none}
+  *{animation-duration:.001ms !important;transition-duration:.001ms !important}
+}
 .center{text-align:center}
 .lead{color:var(--muted);font-size:17px;max-width:660px}
 .center .lead{margin-left:auto;margin-right:auto}
 
 /* ── buttons ── */
 .btn{display:inline-flex;align-items:center;gap:9px;border:0;cursor:pointer;
-  padding:13px 24px;border-radius:10px;font-weight:600;font-size:15px;font-family:inherit;
-  transition:transform .15s, box-shadow .15s, background .15s}
-.btn:hover{text-decoration:none;transform:translateY(-1px)}
-.btn-primary{background:var(--green);color:#fff;box-shadow:0 4px 16px rgba(47,107,79,.28)}
-.btn-primary:hover{background:var(--green-d)}
-.btn-gold{background:var(--gold);color:#fff}
-.btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+  padding:14px 26px;border-radius:11px;font-weight:600;font-size:15px;font-family:inherit;
+  letter-spacing:.005em;
+  transition:transform .18s cubic-bezier(.22,.61,.36,1), box-shadow .18s, background .18s}
+.btn:hover{text-decoration:none;transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn-primary{background:var(--green);color:#fff;box-shadow:0 6px 18px rgba(43,99,71,.26)}
+.btn-primary:hover{background:var(--green-d);box-shadow:0 10px 26px rgba(43,99,71,.32)}
+.btn-gold{background:linear-gradient(135deg,var(--gold-l),var(--gold));color:#fff;
+  box-shadow:0 6px 18px rgba(184,128,42,.30)}
+.btn-gold:hover{box-shadow:0 10px 26px rgba(184,128,42,.38)}
+.btn-ghost{background:var(--card);color:var(--ink);border:1px solid var(--line);box-shadow:var(--shadow-s)}
+.btn-ghost:hover{border-color:var(--green);color:var(--green)}
 .btn-block{width:100%;justify-content:center}
 
 /* ── header ── */
-.hdr{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.hdr-in{display:flex;align-items:center;gap:22px;height:70px}
+.hdr{position:sticky;top:0;z-index:60;background:rgba(251,248,242,.88);
+  backdrop-filter:saturate(160%) blur(14px);-webkit-backdrop-filter:saturate(160%) blur(14px);
+  border-bottom:1px solid transparent;transition:border-color .25s, box-shadow .25s, background .25s}
+/* Scroll karte hi header ko kinaara aur halki chhaya mil jaati hai --
+   tabhi jab uske neeche kuch ho. Shuru se lagi rehti to hero se juda
+   hua lagta. */
+.hdr.stuck{border-bottom-color:var(--line);box-shadow:0 4px 20px rgba(30,45,35,.07);background:rgba(251,248,242,.96)}
+.hdr-in{display:flex;align-items:center;gap:22px;height:74px}
 .brand{display:flex;align-items:center;gap:11px;font-family:Fraunces,serif;font-weight:700;font-size:20px;color:var(--ink)}
 .brand:hover{text-decoration:none}
-.brand-mark{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--green),#4b9a72);
-  color:#fff;display:grid;place-items:center;font-size:17px;flex:0 0 36px}
+.brand-mark{width:38px;height:38px;border-radius:11px;
+  background:linear-gradient(140deg,var(--green),#4b9a72);
+  color:#fff;display:grid;place-items:center;font-size:18px;flex:0 0 38px;
+  box-shadow:0 4px 12px rgba(43,99,71,.28)}
 .brand small{display:block;font-family:Inter,sans-serif;font-size:11px;font-weight:500;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
 .nav{margin-left:auto;display:flex;align-items:center;gap:26px}
 .nav a{color:var(--ink);font-size:15px;font-weight:500}
@@ -111,29 +151,41 @@ img{max-width:100%;display:block}
 .grid{display:grid;gap:24px}
 .g3{grid-template-columns:repeat(3,1fr)}
 .g4{grid-template-columns:repeat(4,1fr)}
-.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
-  display:flex;flex-direction:column;transition:transform .18s, box-shadow .18s}
-.card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  display:flex;flex-direction:column;box-shadow:var(--shadow-s);
+  transition:transform .26s cubic-bezier(.22,.61,.36,1), box-shadow .26s, border-color .26s}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#d8cbb4}
 .card-img{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--soft)}
-.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
-.card:hover .card-img img{transform:scale(1.04)}
-.card-tag{position:absolute;top:12px;left:12px;background:rgba(27,36,32,.86);color:#fff;
-  padding:5px 11px;border-radius:7px;font-size:12px;font-weight:600;letter-spacing:.02em}
-.card-status{position:absolute;top:12px;right:12px;padding:5px 11px;border-radius:7px;font-size:12px;font-weight:700;color:#fff}
-.st-sold{background:#b23b3b}.st-rented{background:#8a6d1f}
-.card-body{padding:17px 18px 19px;display:flex;flex-direction:column;flex:1}
-.card-price{font-family:Fraunces,serif;font-size:21px;font-weight:700;color:var(--green);margin-bottom:5px}
-.card-title{font-size:16px;font-weight:600;margin:0 0 7px;line-height:1.4}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.22,.61,.36,1)}
+.card:hover .card-img img{transform:scale(1.06)}
+/* Photo ke neeche halka andhera, taaki uspar rakhe tag hamesha padhe
+   ja sakein -- chahe photo halki ho ya gehri. */
+.card-img:after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(15,25,18,.28) 0%,rgba(15,25,18,0) 38%)}
+.card-tag{position:absolute;top:12px;left:12px;z-index:2;
+  background:rgba(20,38,28,.82);backdrop-filter:blur(6px);color:#fff;
+  padding:6px 12px;border-radius:8px;font-size:12px;font-weight:600;letter-spacing:.03em}
+.card-status{position:absolute;top:12px;right:12px;z-index:2;padding:6px 12px;border-radius:8px;
+  font-size:12px;font-weight:700;color:#fff;letter-spacing:.03em}
+.st-sold{background:#a83a3a}.st-rented{background:#8a6d1f}
+.card-body{padding:18px 19px 20px;display:flex;flex-direction:column;flex:1}
+.card-price{font-family:Fraunces,serif;font-size:23px;font-weight:700;color:var(--green);
+  margin-bottom:6px;letter-spacing:-.02em}
+.card-title{font-size:16.5px;font-weight:600;margin:0 0 7px;line-height:1.4}
 .card-title a{color:var(--ink)}
+.card-title a:hover{color:var(--green);text-decoration:none}
 .card-loc{color:var(--muted);font-size:13.5px;margin:0 0 13px}
-.card-meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-top:13px;border-top:1px solid var(--line)}
-.chip{background:var(--soft);border-radius:7px;padding:5px 10px;font-size:12.5px;color:var(--muted);font-weight:500}
+.card-meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-top:14px;border-top:1px solid var(--line)}
+.chip{background:var(--soft);border:1px solid #ece4d5;border-radius:8px;padding:5px 11px;
+  font-size:12.5px;color:#6a7269;font-weight:500}
 
 /* ── footer ── */
-.ftr{background:#182420;color:#c8d3cd;padding:56px 0 26px;margin-top:70px}
-.ftr h4{color:#fff;font-family:Inter,sans-serif;font-size:14px;text-transform:uppercase;letter-spacing:.07em;margin-bottom:16px}
-.ftr a{color:#c8d3cd;font-size:14.5px}
-.ftr a:hover{color:#fff}
+.ftr{background:var(--green-deep);color:#c3cfc7;padding:62px 0 26px;margin-top:76px;
+  border-top:3px solid var(--gold)}
+.ftr h4{color:#fff;font-family:Inter,sans-serif;font-size:13px;text-transform:uppercase;
+  letter-spacing:.10em;margin-bottom:16px}
+.ftr a{color:#c3cfc7;font-size:14.5px;transition:color .18s}
+.ftr a:hover{color:var(--gold-l)}
 .ftr-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.3fr;gap:36px}
 .ftr ul{list-style:none;padding:0;margin:0}
 .ftr li{margin-bottom:9px}
@@ -145,10 +197,17 @@ img{max-width:100%;display:block}
 .alert-err{background:#fdeceb;color:#8f2c26;border:1px solid #f3c9c6}
 
 /* ── whatsapp ── */
-.wa{position:fixed;right:18px;bottom:18px;z-index:70;width:54px;height:54px;border-radius:50%;
-  background:#25d366;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.22)}
-.wa:hover{text-decoration:none;transform:scale(1.06)}
-.wa svg{width:29px;height:29px;fill:#fff}
+.wa{position:fixed;right:18px;bottom:18px;z-index:70;width:56px;height:56px;border-radius:50%;
+  background:#25d366;display:grid;place-items:center;box-shadow:0 8px 26px rgba(37,211,102,.42);
+  transition:transform .22s cubic-bezier(.22,.61,.36,1), box-shadow .22s}
+.wa:hover{text-decoration:none;transform:scale(1.08);box-shadow:0 12px 34px rgba(37,211,102,.55)}
+.wa svg{width:30px;height:30px;fill:#fff}
+/* Dhadkan sirf ek baar, page khulne ke baad. Lagataar hilta button
+   dhyaan kheenchta hai par thoda der baad chidhaane lagta hai. */
+@keyframes waPulse{0%{box-shadow:0 8px 26px rgba(37,211,102,.42),0 0 0 0 rgba(37,211,102,.55)}
+  70%{box-shadow:0 8px 26px rgba(37,211,102,.42),0 0 0 16px rgba(37,211,102,0)}
+  100%{box-shadow:0 8px 26px rgba(37,211,102,.42),0 0 0 0 rgba(37,211,102,0)}}
+.wa{animation:waPulse 2.2s ease-out 1.4s 3}
 
 @media(max-width:980px){
   .g4{grid-template-columns:repeat(2,1fr)}
@@ -259,6 +318,41 @@ img{max-width:100%;display:block}
       var open = n.classList.toggle('open');
       b.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
+  })();
+
+  /* Header ko kinaara tab milta hai jab page thoda scroll ho chuka ho. */
+  (function () {
+    var h = document.querySelector('.hdr');
+    if (!h) return;
+    var tick = function () { h.classList.toggle('stuck', window.scrollY > 12); };
+    tick();
+    window.addEventListener('scroll', tick, { passive: true });
+  })();
+
+  /* Scroll par section ka halka sa upar aana.
+     IntersectionObserver isliye ki scroll par har baar hisaab lagana
+     phone par lag karta hai -- browser khud batata hai ki kya dikha.
+     Jinke system mein animation band hai unke liye ye chalta hi nahi. */
+  (function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els = document.querySelectorAll('.sec > .wrap, .card, .gd-step, .crow');
+
+    if (reduce || !('IntersectionObserver' in window)) return;
+
+    els.forEach(function (el, i) {
+      el.setAttribute('data-rise', '');
+      /* Ek row ke card ek ke baad ek aayein, saath nahi -- nazar unpar
+         baayen se daayen chalti hai. */
+      el.style.transitionDelay = ((i % 3) * 70) + 'ms';
+    });
+
+    var io = new IntersectionObserver(function (rows) {
+      rows.forEach(function (r) {
+        if (r.isIntersecting) { r.target.classList.add('in'); io.unobserve(r.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+
+    els.forEach(function (el) { io.observe(el); });
   })();
 </script>
 @yield('script')
