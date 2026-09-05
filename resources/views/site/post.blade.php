@@ -144,7 +144,7 @@
 
 <div class="wrap crumb">
   <a href="{{ route('home') }}">Home</a> ›
-  <a href="{{ route('blog') }}">Guide</a> ›
+  <a href="{{ route('blog') }}">Blogs</a> ›
   <span>{{ $post->title }}</span>
 </div>
 

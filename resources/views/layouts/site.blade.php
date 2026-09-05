@@ -343,7 +343,7 @@ img{max-width:100%;display:block}
     <nav class="nav" id="nav">
       <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'on' : '' }}">Home</a>
       <a href="{{ route('properties') }}" class="{{ request()->routeIs('properties') ? 'on' : '' }}">Properties</a>
-      <a href="{{ route('blog') }}" class="{{ request()->routeIs('blog', 'post') ? 'on' : '' }}">Guide</a>
+      <a href="{{ route('blog') }}" class="{{ request()->routeIs('blog', 'post') ? 'on' : '' }}">Blogs</a>
       <a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'on' : '' }}">About</a>
       <a href="{{ route('contact') }}" class="{{ request()->routeIs('contact') ? 'on' : '' }}">Contact</a>
       <a class="hdr-call" href="tel:{{ $s['phone_link'] }}">📞 {{ $s['phone'] }}</a>
