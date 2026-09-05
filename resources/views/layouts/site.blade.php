@@ -244,7 +244,16 @@ img{max-width:100%;display:block}
   transition:opacity .2s, transform .2s}
 .fab-wrap{position:relative;display:block}
 .fab-wrap:hover .fab-label{opacity:1;transform:translateY(-50%)}
-@media(max-width:640px){ .fab-label{display:none} }
+/* Phone par button chhote aur kinaare ke paas -- bade rehne par
+   wo form ke dropdown ke upar aa jaate hain aur unhe dabana
+   mushkil ho jaata hai. */
+@media(max-width:640px){
+  .fab-label{display:none}
+  .fabs{right:12px;bottom:12px;gap:10px}
+  .fab{width:48px;height:48px}
+  .fab svg{width:24px;height:24px}
+  .fab.wa svg{width:25px;height:25px}
+}
 /* Dhadkan sirf ek baar, page khulne ke baad. Lagataar hilta button
    dhyaan kheenchta hai par thoda der baad chidhaane lagta hai. */
 @keyframes waPulse{0%{box-shadow:0 8px 26px rgba(37,211,102,.42),0 0 0 0 rgba(37,211,102,.55)}

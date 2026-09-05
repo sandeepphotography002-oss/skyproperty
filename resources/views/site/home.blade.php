@@ -174,28 +174,32 @@
    Ye block sabse aakhir mein hai -- CSS mein baad wala jeetta hai, aur
    upar rakhne par base rules ise daba dete. */
 @media(max-width:640px){
-  /* min-height hata rahe hain -- content jitni jagah maange, utni. */
-  .hero{min-height:auto;padding:30px 0 34px}
+  /* min-height hata rahe hain -- content jitni jagah maange, utni.
+     Har naap yahan is hisaab se kasa gaya hai ki Search ka button
+     pehli screen par poora dikhe. Wahi button page ka asli kaam hai;
+     aadha kata hua button dabaya hi nahi jaata. */
+  .hero{min-height:auto;padding:20px 0 28px}
 
-  .hero-eyebrow{font-size:10.5px;padding:6px 13px;margin-bottom:13px;letter-spacing:.05em}
-  .hero h1{font-size:28px;max-width:none;line-height:1.14}
-  .hero-tag{font-size:16.5px;margin:2px 0 11px}
-  .hero p{font-size:14.5px;line-height:1.62;margin-bottom:18px}
+  .hero-eyebrow{font-size:10px;padding:5px 12px;margin-bottom:10px;letter-spacing:.05em}
+  .hero h1{font-size:25px;max-width:none;line-height:1.14}
+  .hero-tag{font-size:15px;margin:2px 0 9px}
+  .hero p{font-size:13.8px;line-height:1.55;margin-bottom:15px}
 
   /* Dono button ek line mein, barabar chaudai. nowrap isliye ki number
      do line mein toot kar button ka aakar bigaad deta hai. */
   .hero-btns{gap:9px;flex-wrap:nowrap}
   .hero-btns .btn{flex:1 1 0;min-width:0;justify-content:center;
-    padding:12px 8px;font-size:13px;gap:6px;white-space:nowrap}
+    padding:11px 8px;font-size:13px;gap:6px;white-space:nowrap}
 
-  .finder{margin-top:22px;padding:15px;gap:11px;border-radius:14px}
-  .finder label{font-size:10.5px;margin-bottom:5px}
-  .finder input,.finder select{padding:11px 12px;font-size:14.5px}
+  .finder{margin-top:16px;padding:13px;gap:9px;border-radius:14px}
+  .finder label{font-size:10px;margin-bottom:4px}
+  .finder input,.finder select{padding:10px 12px;font-size:14.5px}
+  .finder .btn{padding:12px 18px}
 
-  .stats{margin-top:24px;gap:10px}
-  .stat{padding:13px 14px;border-radius:12px}
-  .stat b{font-size:25px}
-  .stat span{font-size:11.5px}
+  .stats{margin-top:20px;gap:9px}
+  .stat{padding:12px 13px;border-radius:12px}
+  .stat b{font-size:24px}
+  .stat span{font-size:11px}
 }
 
 /* Bahut chhote phone (360px se kam) par number ke liye jagah nahi
