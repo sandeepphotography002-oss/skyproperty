@@ -12,6 +12,7 @@ class Post extends Model
     protected $casts = [
         'faq'          => 'array',
         'is_featured'  => 'boolean',
+        'faq_shared'   => 'boolean',
         'published_at' => 'datetime',
     ];
 

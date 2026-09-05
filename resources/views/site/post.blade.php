@@ -65,6 +65,13 @@
 .art-body img{border-radius:12px;margin:18px 0}
 .art-body a{text-decoration:underline}
 
+.art-more{border-top:1px solid var(--line);margin-top:36px;padding-top:26px}
+.art-more h2{font-size:22px;margin-bottom:14px}
+.art-more ul{list-style:none;padding:0;margin:0 0 18px}
+.art-more li{position:relative;padding-left:24px;margin-bottom:9px;line-height:1.65}
+.art-more li:before{content:"→";position:absolute;left:0;color:var(--brand);font-weight:700}
+.art-more p{color:var(--muted);font-size:14.5px;line-height:1.75}
+
 .author{display:flex;gap:16px;background:var(--soft);border-radius:var(--radius);
   padding:22px 24px;margin:34px 0 0}
 .author-ic{width:52px;height:52px;flex:0 0 52px;border-radius:50%;
@@ -118,7 +125,10 @@
 ]), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!}
 </script>
 
-@if(!empty($post->faq))
+{{-- Schema sirf tab jab sawaal is lekh ke apne hon. Ek hi FAQ set
+     ka schema kai page se bhejna Google ko batata hai ki wo page
+     ek doosre ki nakal hain. --}}
+@if(!empty($post->faq) && !$post->faq_shared)
 <script type="application/ld+json">
 {!! json_encode([
     '@context'   => 'https://schema.org',
@@ -179,6 +189,34 @@
         @endforeach
       </div>
     @endif
+
+    {{-- Har lekh ke aakhir mein ek hi jagah se aane wala hissa: andar ke
+         link, sarkari record ke link, aur doosre dhandhe ka link. View
+         mein hai, har post ki file mein nahi -- warna badalna ho to har
+         file kholni padti. --}}
+    <div class="art-more">
+      <h2>Read next</h2>
+      <ul>
+        <li><a href="{{ route('properties') }}">All property in Morni Hills</a> &mdash; plots, land, farmhouses and cottages</li>
+        <li><a href="{{ route('properties', ['type' => 'plot']) }}">Residential plots for sale</a></li>
+        <li><a href="{{ route('properties', ['type' => 'farmhouse']) }}">Farmhouses in Morni Hills</a></li>
+        <li><a href="{{ route('blog') }}">The full Morni property guide</a></li>
+      </ul>
+
+      <p>
+        Land records for Haryana are public &mdash; look any plot up yourself at
+        <a href="https://jamabandi.nic.in/" target="_blank" rel="noopener nofollow">jamabandi.nic.in</a>,
+        and district information is at
+        <a href="https://panchkula.gov.in/" target="_blank" rel="noopener nofollow">panchkula.gov.in</a>.
+      </p>
+
+      <p style="margin-bottom:0">
+        <strong>Also from us:</strong>
+        <a href="https://www.sandeepphotography.com/" target="_blank" rel="noopener">Sandeep Photography</a>
+        &mdash; wedding, pre-wedding and event photography across Chandigarh, Panchkula and
+        Mohali. Most people mark a new house with a griha pravesh, and later a wedding.
+      </p>
+    </div>
 
     <div class="author">
       <img class="author-ic" src="{{ asset('brand/mark.png') }}" alt="" style="object-fit:contain;background:#fff;padding:7px">

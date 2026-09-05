@@ -26,6 +26,11 @@ class PostSeeder extends Seeder
         $dir   = __DIR__ . '/posts';
         $files = glob($dir . '/*.php') ?: [];
 
+        /* _ se shuru hone wali file lekh nahi hai -- wo sabke saath
+           baanti jaane wali cheezein rakhti hai. */
+        $shared = is_file($dir . '/_shared-faq.php') ? require $dir . '/_shared-faq.php' : [];
+        $files  = array_values(array_filter($files, fn ($p) => !str_starts_with(basename($p), '_')));
+
         if (!$files) {
             $this->command?->warn('posts/ folder khaali hai.');
 
@@ -48,6 +53,13 @@ class PostSeeder extends Seeder
                "-2" laga deta hai -- aur yahan wo takraav khud is post ka
                hota, isliye har baar chalane par ek nayi nakal ban jaati. */
             $slug = $row['slug'] ?? Str::slug($row['title']);
+
+            /* Apni faq na ho to sabki wali mil jaati hai, aur nishaan
+               lag jaata hai taaki uska schema na bheja jaye. */
+            if (empty($row['faq']) && $shared) {
+                $row['faq']        = $shared;
+                $row['faq_shared'] = true;
+            }
 
             $row += [
                 'status'      => 'published',
