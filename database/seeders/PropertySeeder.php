@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Property;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 /**
  * Shuruaati listings, taaki site khaali na khule.
@@ -133,7 +134,11 @@ class PropertySeeder extends Seeder
         ];
 
         foreach ($rows as $r) {
-            $r['slug']     = Property::uniqueSlug($r['title']);
+            /* Str::slug, uniqueSlug nahi. uniqueSlug takraav par "-2"
+               laga deta hai -- aur yahan takraav khud isi property ka
+               hota hai, isliye har baar chalane par nakal ban jaati thi.
+               PostSeeder mein yahi bug tha aur wahan theek ho chuka. */
+            $r['slug']     = Str::slug($r['title']);
             $r['city']     = $r['city']     ?? 'Morni';
             $r['district'] = $r['district'] ?? 'Panchkula';
             $r['state']    = $r['state']    ?? 'Haryana';
