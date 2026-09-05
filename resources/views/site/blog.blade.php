@@ -90,9 +90,7 @@
         @endforeach
       </div>
 
-      <div class="pager" style="display:flex;justify-content:center;margin-top:38px">
-        {{ $posts->onEachSide(1)->links() }}
-      </div>
+      {{ $posts->onEachSide(1)->links() }}
     @endif
   </div>
 </section>

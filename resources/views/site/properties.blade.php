@@ -21,15 +21,6 @@
 .empty{text-align:center;padding:56px 20px;background:var(--soft);border-radius:var(--radius)}
 .empty h3{margin-bottom:8px}
 
-.pager{display:flex;justify-content:center;margin-top:38px}
-.pager nav{display:flex;gap:6px;flex-wrap:wrap}
-.pager a,.pager span{display:inline-block;padding:9px 14px;border:1px solid var(--line);
-  border-radius:8px;background:#fff;font-size:14.5px;color:var(--ink)}
-.pager a:hover{border-color:var(--brand);text-decoration:none}
-.pager [aria-current]{background:var(--brand);color:#fff;border-color:var(--brand)}
-.pager .hidden,.pager [aria-disabled="true"]{opacity:.42}
-.pager svg{width:16px;height:16px}
-
 .plist{max-width:880px}
 .plist h2{margin:0 0 14px}
 .plist h3{font-size:19px;margin:30px 0 10px}
@@ -131,7 +122,7 @@
         @endforeach
       </div>
 
-      <div class="pager">{{ $properties->onEachSide(1)->links() }}</div>
+      {{ $properties->onEachSide(1)->links() }}
     @endif
 
   </div>

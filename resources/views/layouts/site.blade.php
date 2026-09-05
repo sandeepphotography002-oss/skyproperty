@@ -218,6 +218,37 @@ img{max-width:100%;display:block}
 .alert-ok{background:#e8f5ee;color:#1d5b3d;border:1px solid #bfe0cd}
 .alert-err{background:#fdeceb;color:#8f2c26;border:1px solid #f3c9c6}
 
+/* ── pagination ──
+   Teen pages ispar chalte hain (blog, properties, aur baad mein aur),
+   isliye style yahan hai. */
+.pg{display:flex;align-items:center;justify-content:center;gap:8px;
+  flex-wrap:wrap;margin:38px 0 0}
+.pg-btn,.pg-num,.pg-gap{display:inline-flex;align-items:center;justify-content:center;
+  min-width:42px;height:42px;padding:0 15px;border-radius:10px;
+  font-size:14.5px;font-weight:600;border:1px solid var(--line);
+  background:var(--card);color:var(--ink);box-shadow:var(--shadow-s);
+  transition:border-color .18s, color .18s, transform .18s, background .18s}
+.pg-num{padding:0 8px}
+.pg-btn:hover,.pg-num:hover{text-decoration:none;border-color:var(--brand);
+  color:var(--brand);transform:translateY(-1px)}
+.pg-num.is-on{background:var(--brand);border-color:var(--brand);color:#fff;
+  box-shadow:0 4px 14px rgba(81,135,63,.30)}
+.pg-num.is-on:hover{transform:none;color:#fff}
+.pg-btn.is-off{opacity:.42;box-shadow:none;cursor:default}
+.pg-btn.is-off:hover{border-color:var(--line);color:var(--ink);transform:none}
+.pg-gap{border:0;background:none;box-shadow:none;min-width:22px;padding:0;color:var(--muted)}
+.pg-nums{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.pg-count{text-align:center;color:var(--muted);font-size:13.5px;margin:14px 0 0}
+
+@media(max-width:560px){
+  /* Phone par "Previous / Next" ka likha hua text nikal dete hain --
+     sirf teer rehta hai, aur ginti ke liye jagah bach jaati hai. */
+  .pg-btn{padding:0 12px;font-size:0;min-width:44px}
+  .pg-btn:before{font-size:17px}
+  .pg-btn:first-child:before{content:"←"}
+  .pg-btn:last-child:before{content:"→"}
+}
+
 /* ── FAQ accordion ──
    Char page ispar chalte hain (post, properties, about, contact),
    isliye yahan hai. --}}*/
