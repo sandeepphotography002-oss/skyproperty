@@ -211,8 +211,24 @@ img{max-width:100%;display:block}
 .ftr-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.3fr;gap:36px}
 .ftr ul{list-style:none;padding:0;margin:0}
 .ftr li{margin-bottom:9px}
-.ftr-bottom{border-top:1px solid #2a3a34;margin-top:36px;padding-top:20px;
-  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:13.5px;color:#8fa199}
+.ftr-bottom{border-top:1px solid rgba(255,255,255,.13);margin-top:36px;padding-top:20px;
+  display:flex;justify-content:space-between;align-items:center;gap:12px 22px;
+  flex-wrap:wrap;font-size:13.5px;color:#8fa199}
+.ftr-by{display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ftr-by a{font-size:13.5px}
+/* WhatsApp ka apna rang, taaki footer ke baaki link se alag dikhe aur
+   pata chale ki ye dabane par WhatsApp kholega. */
+.ftr-wa{display:inline-flex;align-items:center;gap:6px;
+  background:rgba(37,211,102,.14);border:1px solid rgba(37,211,102,.34);
+  border-radius:99px;padding:5px 12px;color:#7fe0a5 !important;
+  transition:background .18s, border-color .18s}
+.ftr-wa:hover{background:rgba(37,211,102,.24);border-color:rgba(37,211,102,.6);
+  color:#a5ecc2 !important;text-decoration:none}
+.ftr-wa svg{fill:currentColor;flex:0 0 15px}
+@media(max-width:760px){
+  /* Teen cheezein ek line mein nahi samaatin -- neeche, baayen se. */
+  .ftr-bottom{flex-direction:column;align-items:flex-start;gap:10px}
+}
 
 .alert{padding:13px 17px;border-radius:10px;margin-bottom:18px;font-size:14.5px}
 .alert-ok{background:#e8f5ee;color:#1d5b3d;border:1px solid #bfe0cd}
@@ -407,7 +423,22 @@ img{max-width:100%;display:block}
 
     <div class="ftr-bottom">
       <span>&copy; {{ date('Y') }} {{ $s['name'] }}. All rights reserved.</span>
+
       <span>Serving {{ implode(' · ', array_slice($s['areas'], 0, 5)) }}</span>
+
+      {{-- Website banane wale ka credit. Number yahan property wale se
+           alag hai (83073 77270 nahi) -- ye photography wale dhandhe ka
+           hai, aur poochhne wala waheen pahunchna chahiye. --}}
+      <span class="ftr-by">
+        Website by
+        <a href="https://www.sandeepphotography.com/" target="_blank" rel="noopener">Sandeep Photography</a>
+        <a class="ftr-wa"
+           href="https://wa.me/918930997002?text={{ urlencode('Hello, I saw your work on the Sky Property website.') }}"
+           target="_blank" rel="noopener" aria-label="WhatsApp Sandeep Photography on +91 89309 97002">
+          <svg viewBox="0 0 24 24" aria-hidden="true" width="15" height="15"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15s-.77.97-.94 1.17c-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35M12.05 21.8h-.02c-1.74 0-3.45-.47-4.94-1.35l-.35-.21-3.67.96.98-3.58-.23-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.13 1.03 7 2.9a9.82 9.82 0 0 1 2.9 6.99c0 5.45-4.44 9.89-9.9 9.89M20.52 3.45A11.78 11.78 0 0 0 12.05 0C5.5 0 .17 5.33.17 11.88c0 2.09.55 4.14 1.59 5.94L.07 24l6.33-1.66a11.83 11.83 0 0 0 5.65 1.44h.01c6.54 0 11.87-5.33 11.88-11.88 0-3.17-1.24-6.15-3.48-8.4"/></svg>
+          +91 89309 97002
+        </a>
+      </span>
     </div>
   </div>
 </footer>
