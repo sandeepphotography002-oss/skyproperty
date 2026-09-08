@@ -143,6 +143,21 @@
 </script>
 @endif
 
+{{-- Wahi raasta jo neeche dikh raha hai, schema mein bhi. Google
+     search result mein Home > Blogs > lekh ka naam dikha deta hai,
+     jo poore URL se padhne mein aasan hota hai. --}}
+<script type="application/ld+json">
+{!! json_encode([
+    '@context'        => 'https://schema.org',
+    '@type'           => 'BreadcrumbList',
+    'itemListElement' => [
+        ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home',  'item' => route('home')],
+        ['@type' => 'ListItem', 'position' => 2, 'name' => 'Blogs', 'item' => route('blog')],
+        ['@type' => 'ListItem', 'position' => 3, 'name' => $post->title, 'item' => url()->current()],
+    ],
+], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!}
+</script>
+
 <div class="wrap crumb">
   <a href="{{ route('home') }}">Home</a> ›
   <a href="{{ route('blog') }}">Blogs</a> ›
