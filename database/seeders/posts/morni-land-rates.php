@@ -23,20 +23,32 @@ return [
     <tr><td>1 marla</td><td>—</td><td>About 25 square yards</td></tr>
     <tr><td>1 kanal</td><td>20 marla</td><td>About 505 square yards</td></tr>
     <tr><td>1 acre</td><td>8 kanal, or 160 marla</td><td>About 4,840 square yards</td></tr>
-    <tr><td>1 bigha</td><td>Varies by district</td><td>Ask what it means locally before using it</td></tr>
+    <tr><td>1 biswa</td><td>The smaller local unit</td><td>Size varies by place — confirm what it means here</td></tr>
+    <tr><td>1 bigha</td><td>20 biswa</td><td>What people usually quote in conversation</td></tr>
   </tbody>
 </table>
 
-<p>Two of these deserve a warning.</p>
+<h3>What people say, and what the record says</h3>
+
+<p>This is the part that confuses buyers most, and it is worth being blunt about.</p>
+
+<ul>
+  <li><strong>In conversation</strong>, land around Morni is commonly counted in <strong>bigha and biswa</strong>, with twenty biswa making one bigha.</li>
+  <li><strong>In the revenue record</strong> — the jamabandi and the fard — the area appears in <strong>kanal and marla</strong>.</li>
+</ul>
+
+<p>So the number a seller says and the number that gets registered may be expressed in different systems entirely. Always take the area from the fard as well as from the conversation, and make sure the two describe the same piece of ground.</p>
+
+<p>Two further warnings.</p>
 
 <p><strong>Marla is not the same everywhere in India.</strong> The Haryana and Punjab marla is the one used here. If you have bought in another state, do not carry your number across.</p>
 
-<p><strong>Bigha is the loosest of the lot.</strong> Its size changes from district to district and sometimes from village to village. When somebody quotes in bigha, ask them to restate it in kanal before you write anything down.</p>
+<p><strong>Biswa size is not uniform either.</strong> It changes from place to place, so a bigha in one area is not necessarily a bigha in another. Ask what a biswa means locally before you write any figure down.</p>
 
 <h2>How to compare two quotes properly</h2>
 
 <ol>
-  <li>Write both quotes down with their unit stated.</li>
+  <li>Write both quotes down with their unit stated -- bigha, biswa, marla, kanal or acre.</li>
   <li>Convert both to the same unit. Kanal is usually the most convenient for Morni.</li>
   <li>Ask whether the area quoted is the whole khasra or only the usable part.</li>
   <li>Ask whether the price includes any building on the land.</li>
@@ -114,7 +126,8 @@ HTML,
     'faq' => [
         ['q' => 'How many marla are in one kanal?', 'a' => 'Twenty marla make one kanal. Eight kanal make one acre, so an acre is one hundred and sixty marla. These are the Haryana and Punjab measures, which is what is used in Morni.'],
         ['q' => 'How big is one marla in square yards?', 'a' => 'About twenty five square yards in Haryana and Punjab. Marla is not the same size in every state, so do not carry a figure from elsewhere in India.'],
-        ['q' => 'What is a bigha in Morni?', 'a' => 'Bigha has no fixed size and varies between districts. If someone quotes in bigha, ask them to restate the area in kanal and marla before you record the number anywhere.'],
+        ['q' => 'What is a bigha in Morni?', 'a' => 'One bigha is twenty biswa, and bigha and biswa are what people commonly quote in conversation around Morni. Biswa size varies from place to place, so confirm what it means locally.'],
+        ['q' => 'Why does the seller quote in bigha but the record show kanal?', 'a' => 'Because conversation and the revenue record use different systems. People talk in bigha and biswa while the jamabandi and fard record area in kanal and marla. Take the area from the fard as well and make sure both describe the same ground.'],
         ['q' => 'Why is a small plot dearer per marla than a large one?', 'a' => 'Because small, level, road-touch parcels are the scarce thing in the hills. Large holdings usually include slope you cannot build on, which brings the average rate down.'],
         ['q' => 'Does the quoted area include the slope?', 'a' => 'On paper, usually yes. In practice the buildable part may be much smaller. Always ask what the usable area is and walk it before agreeing a rate.'],
         ['q' => 'Where do I find the official area of a plot?', 'a' => 'In the jamabandi against the khasra number. That figure is what gets registered. If it does not match what the seller told you, settle that question before discussing price.'],
@@ -124,5 +137,5 @@ HTML,
 
     'meta_title'       => 'Morni Hills Land Rates — Per Acre, Kanal and Marla Explained',
     'meta_description' => 'Acre, kanal, marla and bigha explained for Morni Hills buyers, with a conversion table, a worked example and how to compare two land quotes without being misled.',
-    'keywords'         => 'morni hills land rates, land rate per acre morni, kanal marla conversion haryana, morni land price per kanal, bigha in haryana',
+    'keywords'         => 'morni hills land rates, land rate per acre morni, kanal marla conversion haryana, bigha biswa morni, bigha in haryana',
 ];
